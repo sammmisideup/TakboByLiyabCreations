@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LoadingScreen.unity
     guid: 93dde46808ceb7a45aee7b179e96abe4
+  - enabled: 0
+    path: Assets/Scenes/Endless/EndlessTobby.unity
+    guid: 297939354e67314439fe901b5e4d7aa8
+  - enabled: 0
+    path: Assets/Scenes/TobyScene/T-Level1.unity
+    guid: 9a972284b9855ff42bb03261327157cf
   m_configObjects: {}

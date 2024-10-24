@@ -8,6 +8,7 @@ TagManager:
   - MovingObstacle
   - Stamina
   - Obstacle
+  - ObstacleBelow
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
-  - 
+  - LapseTracker
+  - PlayerTracker
+  - Player
   - 
   - 
   - 
