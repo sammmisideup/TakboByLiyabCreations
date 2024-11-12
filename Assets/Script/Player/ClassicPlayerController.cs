@@ -1,22 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ClassicPlayerController : MonoBehaviour
 {
+    [Header("Player Movement")]
     public Rigidbody rb;
     public float jumpForce = 7f;
     public float jumpDown = 10f;
 
     public bool isGrounded = false;
 
+    [Header("Player Items")]
     public GameObject Grab;
 
+    [Header("Player Health")]
+
+    public Vector3 playerSpawner;
     public GameObject heart1, heart2, heart3;
     public GameObject gameOver;
     public static int health;
     public GameObject playerDied;
-    public Vector3 playerSpawner;
+    
 
     [SerializeField] private ParticleSystem ItemsSmokeParticle = default;
 
@@ -100,6 +108,12 @@ public class ClassicPlayerController : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    public void Winner()
+    {
+        SceneManager.LoadScene("TobbyWinner");
+        Time.timeScale = 0;
+    }
+
     private void OnTriggerEnter(Collider col)
     {
         GameObject whatHit = col.gameObject;
@@ -128,6 +142,11 @@ public class ClassicPlayerController : MonoBehaviour
         if(collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
+        } 
+
+        if(collision.gameObject.tag == "SafeZone")
+        {
+           Invoke("Winner", 0.3f);
         } 
     }
 

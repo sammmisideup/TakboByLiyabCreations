@@ -24,5 +24,6 @@ public class FallObject : MonoBehaviour
         {
             FallingObject.isKinematic = false;
         }
+        
     }
 }

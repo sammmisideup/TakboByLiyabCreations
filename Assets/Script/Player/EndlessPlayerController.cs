@@ -2,22 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class EndlessPlayerController : MonoBehaviour
 {
+    [Header("Player Movement")]
     public Rigidbody rb;
     public float jumpForce = 7f;
     public float jumpDown = 10f;
 
     public bool isGrounded = false;
 
+    [Space(10)]
+    [Header("Getting Items and Obstacles?")]
     public GameObject Grab;
 
     public GameObject gameOver;
     
     public GameObject playerDied;
     public Vector3 playerSpawner;
+    public Rigidbody FallingObject;
 
+
+    [Space(10)]
+    [Header("Player Energy")]
     public Image timerStamina;
     float timeRemaining;
     public float maxTime;
@@ -27,6 +36,10 @@ public class EndlessPlayerController : MonoBehaviour
     [SerializeField] private ParticleSystem ItemsSmokeParticle = default;
     public Gradient gradient;
 
+    [Space(10)]
+    [Header("PLayer Score")]
+    public TextMeshProUGUI scoreText;
+    public float scoreValue = 0f;
 
     void Start()
     {
@@ -38,8 +51,6 @@ public class EndlessPlayerController : MonoBehaviour
 
         // For Energy
         timeRemaining = maxTime;
-
-        
         
     }
 
@@ -69,6 +80,11 @@ public class EndlessPlayerController : MonoBehaviour
             Invoke("GameOverNa", 0.3f);
         }
 
+
+        //score ng player
+        scoreText.text = ((int)scoreValue).ToString();
+        scoreValue += 1f *  Time.deltaTime;
+
         
     }
 
@@ -81,9 +97,20 @@ public class EndlessPlayerController : MonoBehaviour
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
+    //GameOver
     public void GameOverNa()
     {
-        gameOver.gameObject.SetActive(true);
+        PlayerPrefs.SetInt("playerfinalscore", (int)scoreValue);
+
+        if (scoreValue > PlayerPrefs.GetInt("finalhighscore"))
+        {
+            PlayerPrefs.SetInt("finalhighscore", (int)scoreValue);   
+        }
+
+
+
+
+        SceneManager.LoadScene("GameOverTobbyEndless");
         Time.timeScale = 0;
     }
 
@@ -101,6 +128,18 @@ public class EndlessPlayerController : MonoBehaviour
             timeRemaining -= minusEnergy;
             Invoke("SpawnPlayer", 1f);
         }
+        if(col.gameObject.tag == "SpeedUp")
+        {
+           MapForce.mapSpeed += 5f;
+        }
+        if(col.gameObject.tag == "SpeedDown")
+        {
+            MapForce.mapSpeed -= 4f;
+        }
+        if(col.gameObject.tag == "FallingObject")
+        {
+            FallingObject.isKinematic = false;
+        }
         
     }
 
@@ -117,6 +156,12 @@ public class EndlessPlayerController : MonoBehaviour
         {
             isGrounded = true;
         } 
+
+
+        if(collision.gameObject.tag == "FallingObject")
+        {
+            FallingObject.isKinematic = false;
+        }
     }
 
     //Okay na ito 
@@ -153,6 +198,7 @@ public class EndlessPlayerController : MonoBehaviour
             Debug.Log("Exit");
         }
     }
+    
 
     
     

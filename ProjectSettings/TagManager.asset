@@ -9,6 +9,10 @@ TagManager:
   - Stamina
   - Obstacle
   - ObstacleBelow
+  - SafeZone
+  - SpeedUp
+  - SpeedDown
+  - FallingObject
   layers:
   - Default
   - TransparentFX
