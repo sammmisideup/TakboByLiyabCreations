@@ -78,8 +78,8 @@ public class EndlessPlayerController : MonoBehaviour
         if(timeRemaining <= 0)
         {
             Invoke("GameOverNa", 0.3f);
+            MapForce.mapSpeed = 5f;
         }
-
 
         //score ng player
         scoreText.text = ((int)scoreValue).ToString();
@@ -111,7 +111,7 @@ public class EndlessPlayerController : MonoBehaviour
 
 
         SceneManager.LoadScene("GameOverTobbyEndless");
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     private void OnTriggerEnter(Collider col)
@@ -130,16 +130,16 @@ public class EndlessPlayerController : MonoBehaviour
         }
         if(col.gameObject.tag == "SpeedUp")
         {
-           MapForce.mapSpeed += 5f;
+           MapForce.mapSpeed += 1f;
         }
         if(col.gameObject.tag == "SpeedDown")
         {
-            MapForce.mapSpeed -= 4f;
+            MapForce.mapSpeed -= 1f;
         }
-        if(col.gameObject.tag == "FallingObject")
-        {
-            FallingObject.isKinematic = false;
-        }
+        // if(col.gameObject.tag == "FallingObject")
+        // {
+        //     FallingObject.isKinematic = false;
+        // }
         
     }
 
@@ -158,10 +158,10 @@ public class EndlessPlayerController : MonoBehaviour
         } 
 
 
-        if(collision.gameObject.tag == "FallingObject")
-        {
-            FallingObject.isKinematic = false;
-        }
+        // if(collision.gameObject.tag == "FallingObject")
+        // {
+        //     FallingObject.isKinematic = false;
+        // }
     }
 
     //Okay na ito 

@@ -27,4 +27,15 @@ public class EndlessGameOver : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("finalhighscore");
     }
+
+    public void EndlessTryAgain()
+    {
+        SceneManager.LoadScene("EndlessMode");
+    }
+
+    public void EndlessBack()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 }

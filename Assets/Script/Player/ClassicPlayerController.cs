@@ -46,7 +46,6 @@ public class ClassicPlayerController : MonoBehaviour
         heart2.gameObject.SetActive(true);
         heart3.gameObject.SetActive(true);
         
-
         
         
     }
@@ -104,14 +103,14 @@ public class ClassicPlayerController : MonoBehaviour
 
     public void GameOverNa()
     {
-        gameOver.gameObject.SetActive(true);
-        Time.timeScale = 0;
+        SceneManager.LoadScene("TobbyGameOver");
+        //Time.timeScale = 0;
     }
 
     public void Winner()
     {
         SceneManager.LoadScene("TobbyWinner");
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 
     private void OnTriggerEnter(Collider col)

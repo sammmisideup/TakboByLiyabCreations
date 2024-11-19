@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1740862168451402130}
   - component: {fileID: 3424727475529795127}
   - component: {fileID: 604577702513062653}
+  - component: {fileID: -4925656692414903222}
+  - component: {fileID: 5063392344582515840}
   m_Layer: 0
   m_Name: daga 1
   m_TagString: Untagged
@@ -83,3 +85,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-4925656692414903222
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396987005518615336}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 6480826bcd5f3cb468063fde200fc803, type: 3}
+--- !u!114 &5063392344582515840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396987005518615336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6ac336150095b46b346b18ef250800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smokeParticle: {fileID: 0}

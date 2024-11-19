@@ -17,7 +17,7 @@ public class FallObject : MonoBehaviour
     {
         
     }
-    public void OnCollisionEnter(Collision other)
+    public void OnTriggerEnter(Collider other)
     {
         GameObject Whathit = other.gameObject;
         if(other.gameObject.tag == "Player")
