@@ -8,7 +8,7 @@ public class MapForce : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D mapRG;
 
-    public TextMeshProUGUI speedText;
+   // public TextMeshProUGUI speedText;
 
     public static float mapSpeed = 5f;
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class MapForce : MonoBehaviour
     void Update()
     {
         mapRG.velocity = Vector2.left * mapSpeed;
-        speedText.text = ((int)mapSpeed).ToString();
+       // speedText.text = ((int)mapSpeed).ToString();
         //scoreValue += 1f *  Time.deltaTime;
     }
 }

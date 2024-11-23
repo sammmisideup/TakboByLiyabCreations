@@ -170,14 +170,15 @@ public class ClassicPlayerController : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider col)
+{
+    GameObject whatHit = col.gameObject;
+    if (whatHit.CompareTag("Stamina") || whatHit.CompareTag("Star"))
     {
-        GameObject whatHit = col.gameObject;
-        if(whatHit.CompareTag("Stamina"))
-        {
-            Grab.SetActive(false);
-            Debug.Log("Exit");
-        }
+        Grab.SetActive(false);
+        Debug.Log("Exit");
     }
+}
+
 
     
     
