@@ -18,8 +18,24 @@ public class MainMenuController : MonoBehaviour
         
     }
 
-    public void StartMenu()
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void CreditsScreen()
+    {
+        SceneManager.LoadScene("CreditsScreen");
+    }
+    public void SettingsScreen()
+    {
+        SceneManager.LoadScene("SettingsScreen");
+    }
+        public void StartMenu()
     {
         SceneManager.LoadScene("GameMode");
+    }
+    public void StoryMode()
+    {
+        SceneManager.LoadScene("StoryMode");
     }
 }
