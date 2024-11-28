@@ -16,13 +16,12 @@ public class EndlessPlayerController : MonoBehaviour
 
     [Space(10)]
     [Header("Getting Items and Obstacles?")]
-    public GameObject Grab;
+    //public GameObject Grab;
 
-    public GameObject gameOver;
     
-    public GameObject playerDied;
+    
     public Vector3 playerSpawner;
-    public Rigidbody FallingObject;
+    //public Rigidbody FallingObject;
 
 
     [Space(10)]
@@ -47,7 +46,6 @@ public class EndlessPlayerController : MonoBehaviour
 
         playerSpawner = transform.position;
 
-        gameOver.gameObject.SetActive(false);
 
         // For Energy
         timeRemaining = maxTime;
@@ -172,7 +170,7 @@ public class EndlessPlayerController : MonoBehaviour
         if(col.gameObject.tag == "Stamina")
         {   
             Debug.Log("press");
-            Grab.SetActive(true);
+            //Grab.SetActive(true);
             if(Input.GetButtonDown("Grab"))
             {
                 timeRemaining += addedEnergy;
@@ -181,7 +179,7 @@ public class EndlessPlayerController : MonoBehaviour
             
 
                 ItemsSmokeParticle.Play();
-                Grab.SetActive(false);
+                //Grab.SetActive(false);
                 Destroy(col.gameObject);
                 Debug.Log("EnergyDestroy");
 
@@ -194,7 +192,7 @@ public class EndlessPlayerController : MonoBehaviour
         GameObject whatHit = col.gameObject;
         if(whatHit.CompareTag("Stamina"))
         {
-            Grab.SetActive(false);
+            //Grab.SetActive(false);
             Debug.Log("Exit");
         }
     }

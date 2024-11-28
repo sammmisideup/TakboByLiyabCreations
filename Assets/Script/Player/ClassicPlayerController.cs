@@ -15,15 +15,14 @@ public class ClassicPlayerController : MonoBehaviour
     public bool isGrounded = false;
 
     [Header("Player Items")]
-    public GameObject Grab;
+    //public GameObject Grab;
 
     [Header("Player Health")]
 
     public Vector3 playerSpawner;
     public GameObject heart1, heart2, heart3;
-    public GameObject gameOver;
     public static int health;
-    public GameObject playerDied;
+    
     
 
     [SerializeField] private ParticleSystem ItemsSmokeParticle = default;
@@ -38,8 +37,7 @@ public class ClassicPlayerController : MonoBehaviour
 
         playerSpawner = transform.position;
 
-        gameOver.gameObject.SetActive(false);
-
+        
         // For player Health System
         health = 3;
         heart1.gameObject.SetActive(true);
@@ -88,6 +86,7 @@ public class ClassicPlayerController : MonoBehaviour
                 heart2.gameObject.SetActive(false);
                 heart3.gameObject.SetActive(false);
                 Invoke("GameOverNa", 0.5f);
+                
                 break;
         }
     }
@@ -157,11 +156,11 @@ public class ClassicPlayerController : MonoBehaviour
         if(col.gameObject.tag == "Stamina")
         {   
             Debug.Log("press");
-            Grab.SetActive(true);
+            //Grab.SetActive(true);
             if(Input.GetButtonDown("Grab"))
             {
                 ItemsSmokeParticle.Play();
-                Grab.SetActive(false);
+                //Grab.SetActive(false);
                 Destroy(col.gameObject);
                 Debug.Log("EnergyDestroy");
 
@@ -174,7 +173,7 @@ public class ClassicPlayerController : MonoBehaviour
     GameObject whatHit = col.gameObject;
     if (whatHit.CompareTag("Stamina") || whatHit.CompareTag("Star"))
     {
-        Grab.SetActive(false);
+        //Grab.SetActive(false);
         Debug.Log("Exit");
     }
 }

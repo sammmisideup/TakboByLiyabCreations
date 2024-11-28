@@ -60,6 +60,9 @@ TagManager:
   - name: Winning
     uniqueID: 1468806971
     locked: 0
-  - name: LEVEL1
+  - name: TobyLevel
     uniqueID: 4031291325
+    locked: 0
+  - name: Dim
+    uniqueID: 3251485721
     locked: 0

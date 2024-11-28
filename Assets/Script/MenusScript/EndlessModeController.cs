@@ -22,6 +22,6 @@ public class EndlessModeController : MonoBehaviour
     
     public void EndlessToby()
     {
-        SceneManager.LoadScene("EndlessToby");
+        SceneManager.LoadScene("TobyEndless");
     }
 }

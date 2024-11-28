@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5981156c006f546baf7aa694cb6e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 0}
+  prefabToSpawn: {fileID: 4644984595364447748, guid: a413eca991aecd54dbe6d2bbbb4b765f, type: 3}
   spawnLocation: {fileID: 0}
 --- !u!95 &5973456485486168088
 Animator:

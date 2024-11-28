@@ -10,7 +10,7 @@ public class MapForce : MonoBehaviour
 
    // public TextMeshProUGUI speedText;
 
-    public static float mapSpeed = 5f;
+    public static float mapSpeed = 50f;
     // Start is called before the first frame update
     void Start()
     {

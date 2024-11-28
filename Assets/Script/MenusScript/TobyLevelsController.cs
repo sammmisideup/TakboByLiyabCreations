@@ -21,6 +21,6 @@ public class TobyLevelsController : MonoBehaviour
 
     public void TLevel1()
     {
-        SceneManager.LoadScene("T-Level1");
+        SceneManager.LoadScene("Toby");
     }
 }
