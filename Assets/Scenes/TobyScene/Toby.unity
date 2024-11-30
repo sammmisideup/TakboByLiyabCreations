@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -285,7 +285,6 @@ MonoBehaviour:
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
-  playerDied: {fileID: 1017532923}
   ItemsSmokeParticle: {fileID: 48643857}
 --- !u!199 &48643856
 ParticleSystemRenderer:
@@ -10823,7 +10822,6 @@ MonoBehaviour:
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
-  playerDied: {fileID: 1017532923}
   ItemsSmokeParticle: {fileID: 301821371}
 --- !u!23 &301821375
 MeshRenderer:
@@ -16283,7 +16281,6 @@ MonoBehaviour:
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
-  playerDied: {fileID: 1017532923}
   ItemsSmokeParticle: {fileID: 682420296}
 --- !u!136 &682420298
 CapsuleCollider:
@@ -22196,7 +22193,6 @@ MonoBehaviour:
   heart1: {fileID: 242043895}
   heart2: {fileID: 1581924534}
   heart3: {fileID: 949537707}
-  playerDied: {fileID: 1017532923}
   ItemsSmokeParticle: {fileID: 1187800122}
 --- !u!54 &1187800124
 Rigidbody:
@@ -28507,7 +28503,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2095037265}
   - component: {fileID: 2095037267}
-  - component: {fileID: 2095037266}
   m_Layer: 0
   m_Name: CameraMap
   m_TagString: Untagged
@@ -28530,14 +28525,6 @@ Transform:
   m_Father: {fileID: 1068118940}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &2095037266
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095037264}
-  m_Enabled: 1
 --- !u!20 &2095037267
 Camera:
   m_ObjectHideFlags: 0
