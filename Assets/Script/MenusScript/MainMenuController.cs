@@ -38,4 +38,9 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadScene("StoryMode");
     }
+        public void QuitGame()
+    {
+        Debug.Log("quit sha");
+        Application.Quit();
+    }
 }
