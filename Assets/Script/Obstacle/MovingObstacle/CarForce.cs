@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class CarForce : MonoBehaviour
 {
-    [SerializeField] private Rigidbody mapRG;
+    // public static CarForce instance;
+
+    [SerializeField] private Rigidbody carRG;
 
    // public TextMeshProUGUI speedText;
 
-    public float mapSpeed = 5f;
+    public float carSpeed = 5f;
+
+    // void Awake() {
+    //     if (instance == null)
+    //         instance = this;
+    // }
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +26,7 @@ public class CarForce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mapRG.velocity = Vector2.left * mapSpeed;
+        carRG.velocity = Vector2.left * carSpeed;
        // speedText.text = ((int)mapSpeed).ToString();
         //scoreValue += 1f *  Time.deltaTime;
     }

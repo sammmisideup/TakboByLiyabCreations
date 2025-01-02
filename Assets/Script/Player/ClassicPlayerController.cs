@@ -9,8 +9,8 @@ public class ClassicPlayerController : MonoBehaviour
 {
     [Header("Player Movement")]
     public Rigidbody rb;
-    public float jumpForce = 7f;
-    public float jumpDown = 10f;
+    public float jumpForce;
+    public float jumpDown;
 
     public bool isGrounded = false;
 
@@ -118,7 +118,7 @@ public class ClassicPlayerController : MonoBehaviour
         if(col.gameObject.tag == "Obstacle")
         {
             health -= 1;
-            Destroy(col.gameObject, 0.3f);
+            Destroy(col.gameObject, 0.2f);
             
         }
         if(col.gameObject.tag == "ObstacleBelow")

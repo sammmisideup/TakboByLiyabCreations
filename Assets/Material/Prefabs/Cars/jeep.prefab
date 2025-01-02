@@ -308,9 +308,10 @@ GameObject:
   - component: {fileID: 8130114810665019615}
   - component: {fileID: -7305238655222194607}
   - component: {fileID: 1955257604282772637}
+  - component: {fileID: 1163253152847268994}
   m_Layer: 0
   m_Name: jeep
-  m_TagString: Ground
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -425,7 +426,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!65 &-7305238655222194607
 BoxCollider:
@@ -438,8 +439,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10.847429, y: 3.4327903, z: 4.1669087}
-  m_Center: {x: -0.2933538, y: 0.015606821, z: -0.14990383}
+  m_Size: {x: 8.45, y: 3.4327903, z: 4.1669087}
+  m_Center: {x: 0.59, y: 0.015606821, z: -0.14990383}
 --- !u!114 &1955257604282772637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,8 +453,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad331c48e7f6f4340a9812aaf8e6f051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapRG: {fileID: 8130114810665019615}
-  mapSpeed: 10
+  carRG: {fileID: 8130114810665019615}
+  carSpeed: 100
+--- !u!65 &1163253152847268994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197654065195654273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.847429, y: 1.68, z: 4.1669087}
+  m_Center: {x: -0.38, y: -0.86, z: -0.14990383}
 --- !u!1 &5802693517920004760
 GameObject:
   m_ObjectHideFlags: 0

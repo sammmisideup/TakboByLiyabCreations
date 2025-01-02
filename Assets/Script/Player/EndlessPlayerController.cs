@@ -76,7 +76,7 @@ public class EndlessPlayerController : MonoBehaviour
         if(timeRemaining <= 0)
         {
             Invoke("GameOverNa", 0.3f);
-            MapForce.mapSpeed = 5f;
+            MapForce.instance.mapSpeed = 50f;
         }
 
         //score ng player
@@ -105,9 +105,6 @@ public class EndlessPlayerController : MonoBehaviour
             PlayerPrefs.SetInt("finalhighscore", (int)scoreValue);   
         }
 
-
-
-
         SceneManager.LoadScene("GameOverTobbyEndless");
         //Time.timeScale = 0;
     }
@@ -128,11 +125,11 @@ public class EndlessPlayerController : MonoBehaviour
         }
         if(col.gameObject.tag == "SpeedUp")
         {
-           MapForce.mapSpeed += 1f;
+           MapForce.instance.mapSpeed += 1f;
         }
         if(col.gameObject.tag == "SpeedDown")
         {
-            MapForce.mapSpeed -= 1f;
+            MapForce.instance.mapSpeed -= 1f;
         }
         // if(col.gameObject.tag == "FallingObject")
         // {

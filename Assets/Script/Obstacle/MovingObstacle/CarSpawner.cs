@@ -44,7 +44,7 @@ public class CarSpawner : MonoBehaviour
 
         GameObject spawnedObstacle = Instantiate(carPrefabs, spawnPoints.position, Quaternion.identity);
 
-        Rigidbody obstacleRB = spawnedObstacle.GetComponent<Rigidbody>();
+        // Rigidbody obstacleRB = spawnedObstacle.GetComponent<Rigidbody>();
         
     }
 }

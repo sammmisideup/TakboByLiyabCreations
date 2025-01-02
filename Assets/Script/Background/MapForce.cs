@@ -6,12 +6,21 @@ using TMPro;
 
 public class MapForce : MonoBehaviour
 {
+    public static MapForce instance;
+
     [SerializeField] private Rigidbody2D mapRG;
 
    // public TextMeshProUGUI speedText;
 
-    public static float mapSpeed = 50f;
+    public float mapSpeed = 50f;
     // Start is called before the first frame update
+
+    void awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
+
     void Start()
     {
         

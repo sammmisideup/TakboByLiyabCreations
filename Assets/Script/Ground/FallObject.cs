@@ -5,6 +5,7 @@ using UnityEngine;
 public class FallObject : MonoBehaviour
 {
     public Rigidbody FallingObject;
+    public float fallSpeed = 50f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class FallObject : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             FallingObject.isKinematic = false;
+            FallingObject.velocity = Vector2.down * fallSpeed;
         }
-        
     }
 }
