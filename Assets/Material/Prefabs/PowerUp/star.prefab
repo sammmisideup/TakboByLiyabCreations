@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1823338592003025184}
   - component: {fileID: -7087241333046999177}
   - component: {fileID: 5148985529872038181}
-  - component: {fileID: 4090681950600385193}
   - component: {fileID: 5973456485486168088}
   m_Layer: 0
   m_Name: star
@@ -117,20 +116,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4090681950600385193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 165842335886100725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd5981156c006f546baf7aa694cb6e20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 4644984595364447748, guid: a413eca991aecd54dbe6d2bbbb4b765f, type: 3}
-  spawnLocation: {fileID: 0}
 --- !u!95 &5973456485486168088
 Animator:
   serializedVersion: 5

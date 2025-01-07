@@ -14,6 +14,7 @@ TagManager:
   - SpeedDown
   - FallingObject
   - Star
+  - Collectibles
   layers:
   - Default
   - TransparentFX

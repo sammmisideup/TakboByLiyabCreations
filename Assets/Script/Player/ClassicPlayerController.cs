@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 using UnityEngine.SceneManagement;
 
 public class ClassicPlayerController : MonoBehaviour
@@ -11,46 +7,35 @@ public class ClassicPlayerController : MonoBehaviour
     public Rigidbody rb;
     public float jumpForce;
     public float jumpDown;
-
     public bool isGrounded = false;
 
-    [Header("Player Items")]
-    //public GameObject Grab;
-
     [Header("Player Health")]
-
     public Vector3 playerSpawner;
     public GameObject heart1, heart2, heart3;
     public static int health;
-    
-    
+
+    [Header("Star System")]
+    public StarManager starManager;  // Reference to StarManager to update the star count
+    public CollectibleManager collectibleManager;  // Reference to CollectibleManager for item collection
+    private bool hasCollectedStar = false;
 
     [SerializeField] private ParticleSystem ItemsSmokeParticle = default;
-
-    
-
-    
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
         playerSpawner = transform.position;
 
-        
-        // For player Health System
+        // Initialize health system
         health = 3;
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
         heart3.gameObject.SetActive(true);
-        
-        
-        
     }
 
     void Update()
     {
-        //Player Jump
+        // Player Jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             Jump();
@@ -60,10 +45,7 @@ public class ClassicPlayerController : MonoBehaviour
             rb.AddForce(Vector3.down * jumpDown, ForceMode.Force);
         }
 
-        //Player Health System
-        if(health > 3)
-           health = 3;
-        
+        // Player Health System
         switch (health)
         {
             case 3:
@@ -86,45 +68,75 @@ public class ClassicPlayerController : MonoBehaviour
                 heart2.gameObject.SetActive(false);
                 heart3.gameObject.SetActive(false);
                 Invoke("GameOverNa", 0.5f);
-                
                 break;
         }
     }
 
-    //Tatalon si player
     void Jump()
     {
         isGrounded = false;
-        rb.velocity = new Vector3(0, 0f,0);
-
+        rb.velocity = new Vector3(0, 0f, 0);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
     public void GameOverNa()
     {
         SceneManager.LoadScene("TobbyGameOver");
-        //Time.timeScale = 0;
     }
 
     public void Winner()
     {
-        SceneManager.LoadScene("TobbyWinner");
-        //Time.timeScale = 0;
+        starManager.CollectStar();  // Award the third star
+        PlayerPrefs.SetInt("TotalStars", starManager.totalStars);  // Save the star count
+        SceneManager.LoadScene("WinningScene");  // Load the Winning Scene
     }
 
     private void OnTriggerEnter(Collider col)
     {
-        GameObject whatHit = col.gameObject;
-        if(col.gameObject.tag == "Obstacle")
+        if (col.gameObject.tag == "Obstacle")
         {
             health -= 1;
             Destroy(col.gameObject, 0.2f);
-            
         }
-        if(col.gameObject.tag == "ObstacleBelow")
+
+        if (col.gameObject.tag == "ObstacleBelow")
         {
             health -= 1;
             Invoke("SpawnPlayer", 1f);
+        }
+
+        // Check for star collection
+        if (col.gameObject.CompareTag("Star") && !hasCollectedStar)
+        {
+            hasCollectedStar = true;
+            starManager.CollectStar();  // Collect first star
+            Destroy(col.gameObject);   // Destroy the star object
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+
+        if (collision.gameObject.tag == "SafeZone")
+        {
+            Debug.Log("SafeZone Reached! Collecting Third Star...");
+            Invoke("Winner", 0.3f);  // Trigger the Winner logic when reaching SafeZone
+        }
+    }
+
+    private void OnTriggerStay(Collider col)
+    {
+        if (col.gameObject.tag == "Collectibles")
+        {
+            if (Input.GetKeyDown(KeyCode.G))  // Press G to collect item
+            {
+                ItemsSmokeParticle.Play();
+                collectibleManager.CollectItem(col.gameObject);
+            }
         }
     }
 
@@ -132,56 +144,4 @@ public class ClassicPlayerController : MonoBehaviour
     {
         transform.position = playerSpawner;
     }
-
-    //titignan kung nasa ground si player para makatalon
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-        if(collision.gameObject.tag == "Ground")
-        {
-            isGrounded = true;
-        } 
-
-        if(collision.gameObject.tag == "SafeZone")
-        {
-           Invoke("Winner", 0.3f);
-        } 
-    }
-
-    //Okay na ito 
-    //Pag nag collide sa item ma pipindot yung grab
-    private void OnTriggerStay(Collider col)
-    {
-        GameObject whatHit = col.gameObject;
-        if(col.gameObject.tag == "Stamina")
-        {   
-            Debug.Log("press");
-            //Grab.SetActive(true);
-            if(Input.GetButtonDown("Grab"))
-            {
-                ItemsSmokeParticle.Play();
-                //Grab.SetActive(false);
-                Destroy(col.gameObject);
-                Debug.Log("EnergyDestroy");
-
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider col)
-{
-    GameObject whatHit = col.gameObject;
-    if (whatHit.CompareTag("Stamina") || whatHit.CompareTag("Star"))
-    {
-        //Grab.SetActive(false);
-        Debug.Log("Exit");
-    }
-}
-
-
-    
-    
- 
-
-
 }
