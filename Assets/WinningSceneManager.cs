@@ -1,5 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;  // For RawImage components
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;  
 
 public class WinningSceneManager : MonoBehaviour
 {
@@ -30,5 +31,13 @@ public class WinningSceneManager : MonoBehaviour
                 starImages[i].gameObject.SetActive(false);  // Hide star
             }
         }
+    }
+    public void NextLevel()
+    {
+        SceneManager.LoadScene("TobyLevels");
+    }
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
