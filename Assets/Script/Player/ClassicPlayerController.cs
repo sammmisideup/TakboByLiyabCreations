@@ -6,7 +6,7 @@ public class ClassicPlayerController : MonoBehaviour
     [Header("Player Movement")]
     public Rigidbody rb;
     public float jumpForce;
-    public float jumpDown;
+    private float jumpDown = 80f;
     public bool isGrounded = false;
 
     [Header("Player Health")]
@@ -24,6 +24,7 @@ public class ClassicPlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.useGravity = true;
         playerSpawner = transform.position;
 
         // Initialize health system
@@ -33,17 +34,24 @@ public class ClassicPlayerController : MonoBehaviour
         heart3.gameObject.SetActive(true);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Player Jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            Jump();
+            isGrounded = false;
+            rb.velocity = new Vector3(0, 0f, 0);
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         }
         else
         {
             rb.AddForce(Vector3.down * jumpDown, ForceMode.Force);
         }
+    }
+
+    void Update()
+    {
+        
 
         // Player Health System
         switch (health)
@@ -70,13 +78,6 @@ public class ClassicPlayerController : MonoBehaviour
                 Invoke("GameOverNa", 0.5f);
                 break;
         }
-    }
-
-    void Jump()
-    {
-        isGrounded = false;
-        rb.velocity = new Vector3(0, 0f, 0);
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
 
     public void GameOverNa()
@@ -127,6 +128,7 @@ public class ClassicPlayerController : MonoBehaviour
             Invoke("Winner", 0.3f);  // Trigger the Winner logic when reaching SafeZone
         }
     }
+    
 
     private void OnTriggerStay(Collider col)
     {

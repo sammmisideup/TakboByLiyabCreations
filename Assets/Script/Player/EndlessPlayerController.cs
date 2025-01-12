@@ -9,8 +9,8 @@ public class EndlessPlayerController : MonoBehaviour
 {
     [Header("Player Movement")]
     public Rigidbody rb;
-    public float jumpForce = 7f;
-    public float jumpDown = 10f;
+    public float jumpForce;
+    private float jumpDown = 80f;
 
     public bool isGrounded = false;
 
@@ -43,7 +43,7 @@ public class EndlessPlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        rb.useGravity = true;
         playerSpawner = transform.position;
 
 
@@ -52,17 +52,23 @@ public class EndlessPlayerController : MonoBehaviour
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        //Player Jump
+        // Player Jump
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            Jump();
+            isGrounded = false;
+            rb.velocity = new Vector3(0, 0f, 0);
+            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         }
         else
         {
             rb.AddForce(Vector3.down * jumpDown, ForceMode.Force);
         }
+    }
+
+    void Update()
+    {
 
         // Pagbwas ng Energy
         if(timeRemaining > 0)
@@ -76,7 +82,6 @@ public class EndlessPlayerController : MonoBehaviour
         if(timeRemaining <= 0)
         {
             Invoke("GameOverNa", 0.3f);
-            MapForce.instance.mapSpeed = 50f;
         }
 
         //score ng player
@@ -85,16 +90,7 @@ public class EndlessPlayerController : MonoBehaviour
 
         
     }
-
-    //Tatalon si player
-    void Jump()
-    {
-        isGrounded = false;
-        rb.velocity = new Vector3(0, 0f,0);
-
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-    }
-
+    
     //GameOver
     public void GameOverNa()
     {
@@ -125,11 +121,12 @@ public class EndlessPlayerController : MonoBehaviour
         }
         if(col.gameObject.tag == "SpeedUp")
         {
-           MapForce.instance.mapSpeed += 1f;
+           EndlessMapForce.instance.endlessMapSpeed += 10f;
+           Debug.Log("SpeedUp");
         }
         if(col.gameObject.tag == "SpeedDown")
         {
-            MapForce.instance.mapSpeed -= 1f;
+            EndlessMapForce.instance.endlessMapSpeed -= 10f;
         }
         // if(col.gameObject.tag == "FallingObject")
         // {

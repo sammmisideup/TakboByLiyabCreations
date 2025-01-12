@@ -32,10 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TobyLevels.unity
     guid: 53e0135e78d47f44a9306e8633e3a0e5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Endless/EndlessToby.unity
     guid: 297939354e67314439fe901b5e4d7aa8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TobyScene/T-Level1.unity
     guid: 9a972284b9855ff42bb03261327157cf
   - enabled: 1

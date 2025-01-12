@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class MapForce : MonoBehaviour
+public class ClassicMapForce : MonoBehaviour
 {
-    public static MapForce instance;
+    public static ClassicMapForce instance;
 
-    [SerializeField] private Rigidbody2D mapRG;
+    [SerializeField] private Rigidbody2D classicMapRG;
 
    // public TextMeshProUGUI speedText;
 
-    public float mapSpeed = 50f;
+    public float classicMapSpeed = 40f;
     // Start is called before the first frame update
 
     void awake()
@@ -30,8 +30,8 @@ public class MapForce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mapRG.velocity = Vector2.left * mapSpeed;
-       // speedText.text = ((int)mapSpeed).ToString();
+        classicMapRG.velocity = Vector2.left * classicMapSpeed;
+       // speedText.text = ((int)classicMapSpeed).ToString();
         //scoreValue += 1f *  Time.deltaTime;
     }
 }
