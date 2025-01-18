@@ -15,7 +15,7 @@ public class ClassicMapForce : MonoBehaviour
     public float classicMapSpeed = 40f;
     // Start is called before the first frame update
 
-    void awake()
+    void Awake()
     {
         if (instance == null)
             instance = this;
@@ -25,8 +25,6 @@ public class ClassicMapForce : MonoBehaviour
     {
         
     }
-
-
     // Update is called once per frame
     void Update()
     {

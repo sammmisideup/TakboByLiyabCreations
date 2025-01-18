@@ -19,7 +19,8 @@ public class ClassicPlayerController : MonoBehaviour
     public CollectibleManager collectibleManager;  // Reference to CollectibleManager for item collection
     private bool hasCollectedStar = false;
 
-    [SerializeField] private ParticleSystem ItemsSmokeParticle = default;
+    [Header("Animation")]
+    public Animator tobyAnimator;
 
     void Start()
     {
@@ -27,11 +28,13 @@ public class ClassicPlayerController : MonoBehaviour
         rb.useGravity = true;
         playerSpawner = transform.position;
 
+        tobyAnimator = GetComponent<Animator>();
         // Initialize health system
         health = 3;
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
         heart3.gameObject.SetActive(true);
+    
     }
 
     void FixedUpdate()
@@ -42,11 +45,13 @@ public class ClassicPlayerController : MonoBehaviour
             isGrounded = false;
             rb.velocity = new Vector3(0, 0f, 0);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            tobyAnimator.SetTrigger("jump");
         }
         else
         {
             rb.AddForce(Vector3.down * jumpDown, ForceMode.Force);
         }
+        
     }
 
     void Update()
@@ -75,7 +80,10 @@ public class ClassicPlayerController : MonoBehaviour
                 heart1.gameObject.SetActive(false);
                 heart2.gameObject.SetActive(false);
                 heart3.gameObject.SetActive(false);
-                Invoke("GameOverNa", 0.5f);
+                ClassicMapForce.instance.classicMapSpeed = 0;
+                isGrounded = false;
+                tobyAnimator.SetTrigger("dead");
+                Invoke("GameOverNa", 3f);
                 break;
         }
     }
@@ -84,6 +92,8 @@ public class ClassicPlayerController : MonoBehaviour
     {
         SceneManager.LoadScene("TobbyGameOver");
     }
+    
+
 
     public void Winner()
     {
@@ -98,6 +108,7 @@ public class ClassicPlayerController : MonoBehaviour
         {
             health -= 1;
             Destroy(col.gameObject, 0.2f);
+            tobyAnimator.SetTrigger("recoil");
         }
 
         if (col.gameObject.tag == "ObstacleBelow")
@@ -120,6 +131,8 @@ public class ClassicPlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
+            //tobyAnimator.SetBool("run", true);
+            tobyAnimator.SetTrigger("runn");
         }
 
         if (collision.gameObject.tag == "SafeZone")
@@ -136,7 +149,7 @@ public class ClassicPlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.G))  // Press G to collect item
             {
-                ItemsSmokeParticle.Play();
+                tobyAnimator.SetTrigger("grab");
                 collectibleManager.CollectItem(col.gameObject);
             }
         }
