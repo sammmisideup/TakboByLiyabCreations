@@ -13,19 +13,27 @@ public class CountDown : MonoBehaviour
     public GameObject countDownMessage;
     public GameObject countDownNum;
 
+    public GameObject player;
+    public Animator tobyAnimator;
+
     void Start()
     {
+        tobyAnimator = player.GetComponent<Animator>();
         countDownCount = countDownStart;
         countDownHolder.gameObject.SetActive(true);
         StartCoroutine(CountDownCo());
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        ClassicMapForce.instance.classicMapSpeed = 0;
+        tobyAnimator.SetBool("idle", true);
     }
 
     private IEnumerator CountDownCo()
     {
+        //tobyAnimator.SetTrigger("runn");
         if(countDownCount>0)
         {
             countDownText.text = countDownCount.ToString();
+            //tobyAnimator.SetTrigger("runn");
         }else{
             countDownMessage.gameObject.SetActive(true);
             countDownNum.gameObject.SetActive(false);
@@ -37,8 +45,11 @@ public class CountDown : MonoBehaviour
         if(countDownCount>=0)
         {
             StartCoroutine(CountDownCo());
+            //tobyAnimator.SetTrigger("runn");
         }else{
-            Time.timeScale = 1;
+            //Time.timeScale = 1;
+            tobyAnimator.SetBool("idle", false);
+            ClassicMapForce.instance.classicMapSpeed = 40f;
             countDownHolder.gameObject.SetActive(false);
         }
     }

@@ -21,7 +21,7 @@ public class CollectibleManager : MonoBehaviour
     public void CollectItem(GameObject collectible)
     {
         collectedCount++;  // Increment the collected item counter
-        Destroy(collectible);  // Destroy the collected item
+        Destroy(collectible, 0.3f);  // Destroy the collected item
 
         Debug.Log("Collected: " + collectedCount + "/" + collectibles.Length);  // Debug line
 

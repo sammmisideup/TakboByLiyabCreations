@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4974943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7640034103347679555, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}
+  m_PrefabInstance: {fileID: 7406085304644633911}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &48643851
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +211,9 @@ MonoBehaviour:
   rb: {fileID: 682420294}
   jumpForce: 15
   isGrounded: 0
+  jumpRequest: 0
+  isGrab: 0
+  grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
   heart1: {fileID: 0}
   heart2: {fileID: 0}
@@ -213,6 +221,7 @@ MonoBehaviour:
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
   tobyAnimator: {fileID: 0}
+  ItemsSmokeParticle: {fileID: 0}
 --- !u!199 &48643856
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -10492,6 +10501,9 @@ MonoBehaviour:
   rb: {fileID: 301821373}
   jumpForce: 15
   isGrounded: 0
+  jumpRequest: 0
+  isGrab: 0
+  grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
   heart1: {fileID: 0}
   heart2: {fileID: 0}
@@ -10499,6 +10511,7 @@ MonoBehaviour:
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
   tobyAnimator: {fileID: 0}
+  ItemsSmokeParticle: {fileID: 0}
 --- !u!23 &301821375
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16110,6 +16123,9 @@ MonoBehaviour:
   rb: {fileID: 682420294}
   jumpForce: 30
   isGrounded: 0
+  jumpRequest: 0
+  isGrab: 0
+  grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
   heart1: {fileID: 0}
   heart2: {fileID: 0}
@@ -16117,6 +16133,7 @@ MonoBehaviour:
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
   tobyAnimator: {fileID: 0}
+  ItemsSmokeParticle: {fileID: 0}
 --- !u!136 &682420298
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -22382,6 +22399,9 @@ MonoBehaviour:
   rb: {fileID: 1187800124}
   jumpForce: 70
   isGrounded: 0
+  jumpRequest: 0
+  isGrab: 0
+  grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
   heart1: {fileID: 242043895}
   heart2: {fileID: 1581924534}
@@ -22389,6 +22409,7 @@ MonoBehaviour:
   starManager: {fileID: 1239431879}
   collectibleManager: {fileID: 573900504}
   tobyAnimator: {fileID: 0}
+  ItemsSmokeParticle: {fileID: 0}
 --- !u!54 &1187800124
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23003,6 +23024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1610380167}
   - component: {fileID: 1610380169}
+  - component: {fileID: 1610380170}
   m_Layer: 5
   m_Name: CountDown
   m_TagString: Untagged
@@ -23050,6 +23072,29 @@ MonoBehaviour:
   countDownHolder: {fileID: 1610380166}
   countDownMessage: {fileID: 936440169}
   countDownNum: {fileID: 1102764737}
+  player: {fileID: 4974943}
+  tobyAnimator: {fileID: 5866666020398208180}
+--- !u!95 &1610380170
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1610380166}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: ddfb04c8984f2e945a799d52f7b1da59, type: 3}
+  m_Controller: {fileID: 9100000, guid: 2349a5eeb6459cc4995cc7efc63bb955, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1736535608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 36452278763580016, guid: 8b5bdf78ac5652b458e757a2e7cc02cf, type: 3}
@@ -28446,10 +28491,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1415138200}
     m_Modifications:
+    - target: {fileID: 373617915433262651, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b408f79f0d326af44989fa484a81dceb, type: 2}
     - target: {fileID: 2915581348041501445, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 620b4d66d62dfc540a1558f6a4027023, type: 2}
+    - target: {fileID: 4424064775471791062, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.6541853
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424064775471791062, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.6541853
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424064775471791062, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.6541853
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424064775471791062, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.231
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424064775471791062, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.198
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424064775471791062, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.285
+      objectReference: {fileID: 0}
     - target: {fileID: 5826046063305829908, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -28497,6 +28570,62 @@ PrefabInstance:
     - target: {fileID: 6598220588024100014, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
       propertyPath: m_Name
       value: Pencil1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: lengthInSec
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: ShapeModule.arc.mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: ShapeModule.arc.speed.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.8207547
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.5345247
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.22841759
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: InitialModule.startSize.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089622133376544809, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd713083b0b3b95498aebe0436c2920f, type: 3}
@@ -28728,9 +28857,13 @@ PrefabInstance:
       propertyPath: collectibleManager
       value: 
       objectReference: {fileID: 573900504}
+    - target: {fileID: 7406085303022101593, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}
+      propertyPath: m_Constraints
+      value: 122
+      objectReference: {fileID: 0}
     - target: {fileID: 7640034103347679555, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}
       propertyPath: m_Name
-      value: Running
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}

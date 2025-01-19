@@ -8,6 +8,9 @@ public class ClassicPlayerController : MonoBehaviour
     public float jumpForce;
     private float jumpDown = 80f;
     public bool isGrounded = false;
+    public bool jumpRequest = false;
+    public bool isGrab = false;
+    public bool grabRequest= false;
 
     [Header("Player Health")]
     public Vector3 playerSpawner;
@@ -19,43 +22,40 @@ public class ClassicPlayerController : MonoBehaviour
     public CollectibleManager collectibleManager;  // Reference to CollectibleManager for item collection
     private bool hasCollectedStar = false;
 
-    [Header("Animation")]
+    [Header("Star System")]
     public Animator tobyAnimator;
+
+    [SerializeField] private ParticleSystem ItemsSmokeParticle = default;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        tobyAnimator = GetComponent<Animator>();
         rb.useGravity = true;
         playerSpawner = transform.position;
 
-        tobyAnimator = GetComponent<Animator>();
         // Initialize health system
         health = 3;
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
         heart3.gameObject.SetActive(true);
-    
-    }
-
-    void FixedUpdate()
-    {
-        // Player Jump
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            isGrounded = false;
-            rb.velocity = new Vector3(0, 0f, 0);
-            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-            tobyAnimator.SetTrigger("jump");
-        }
-        else
-        {
-            rb.AddForce(Vector3.down * jumpDown, ForceMode.Force);
-        }
-        
-    }
+    }    
 
     void Update()
     {
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            jumpRequest = true; // Set jump request flag
+            tobyAnimator.SetTrigger("jump");
+        }
+
+        if (Input.GetKeyDown(KeyCode.G) && isGrab)  // Press G to collect item
+            {
+                grabRequest = true;
+                tobyAnimator.SetTrigger("grab");
+
+            }
+
         
 
         // Player Health System
@@ -80,20 +80,49 @@ public class ClassicPlayerController : MonoBehaviour
                 heart1.gameObject.SetActive(false);
                 heart2.gameObject.SetActive(false);
                 heart3.gameObject.SetActive(false);
+                tobyAnimator.SetTrigger("dead");
                 ClassicMapForce.instance.classicMapSpeed = 0;
                 isGrounded = false;
-                tobyAnimator.SetTrigger("dead");
                 Invoke("GameOverNa", 3f);
                 break;
         }
     }
 
+      void FixedUpdate()
+    {
+        // Ground Check using Raycast
+        //isGrounded = Physics.Raycast(transform.position, Vector3.down, 1.1f);
+
+        // Player Jump
+        if (jumpRequest && isGrounded)
+        {
+            Jump();
+            jumpRequest = false; // Reset jump request
+        }
+        else
+        {
+            rb.AddForce(Vector3.down * jumpDown, ForceMode.Force);
+        }
+
+    }
+
+    private void Jump()
+    {
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); // Reset vertical velocity
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+// private void OnCollisionEnter(Collision collision)
+// {
+//     if (collision.gameObject.CompareTag("Ground"))
+//     {
+//         isGrounded = true;
+//     }
+// }
+
     public void GameOverNa()
     {
         SceneManager.LoadScene("TobbyGameOver");
     }
-    
-
 
     public void Winner()
     {
@@ -124,21 +153,39 @@ public class ClassicPlayerController : MonoBehaviour
             starManager.CollectStar();  // Collect first star
             Destroy(col.gameObject);   // Destroy the star object
         }
+
+        if (col.gameObject.tag == "Collectibles")
+        {
+            isGrab = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider col)
+    {
+        isGrab = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            isGrounded = true;
-            //tobyAnimator.SetBool("run", true);
-            tobyAnimator.SetTrigger("runn");
-        }
+    if (collision.gameObject.tag == "Ground")
+    {
+        isGrounded = true;
+        Debug.Log("Is Grounded: " + isGrounded);
+        tobyAnimator.SetTrigger("runn");
+    }
 
         if (collision.gameObject.tag == "SafeZone")
         {
             Debug.Log("SafeZone Reached! Collecting Third Star...");
             Invoke("Winner", 0.3f);  // Trigger the Winner logic when reaching SafeZone
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = false; // Set isGrounded to false when leaving the ground
         }
     }
     
@@ -147,10 +194,12 @@ public class ClassicPlayerController : MonoBehaviour
     {
         if (col.gameObject.tag == "Collectibles")
         {
-            if (Input.GetKeyDown(KeyCode.G))  // Press G to collect item
+            if (grabRequest)  // Press G to collect item
             {
-                tobyAnimator.SetTrigger("grab");
+                ItemsSmokeParticle.Play();
                 collectibleManager.CollectItem(col.gameObject);
+                grabRequest = false;
+                isGrab = false;
             }
         }
     }
