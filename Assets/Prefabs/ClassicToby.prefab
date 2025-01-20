@@ -1869,7 +1869,7 @@ GameObject:
   - component: {fileID: 7406085303022101592}
   - component: {fileID: 7406085303022101575}
   m_Layer: 0
-  m_Name: Running
+  m_Name: ClassicToby
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TobyScene/T-Level1.unity
     guid: 9a972284b9855ff42bb03261327157cf
   - enabled: 1
+    path: Assets/Scenes/Endless/EndlessTobyyy.unity
+    guid: 711748492662d4e46b9792e87b019196
+  - enabled: 1
     path: Assets/Scenes/Endless/GameOverTobbyEndless.unity
     guid: 48b16583d19738b4b8d00b4192180104
   - enabled: 1

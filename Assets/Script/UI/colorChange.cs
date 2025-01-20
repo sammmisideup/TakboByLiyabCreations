@@ -27,11 +27,11 @@ public class colorChange : MonoBehaviour
                 isChangeColor = false;
             
         }
-        if(isChangeColor == false)
+        if(!isChangeColor)
         {
-            Invoke("backColor", 1.5f);
+            Invoke("backColor", 5f);
         }
-        imageColor.color = Color.Lerp(imageColor.color, targetColor, 0.1f);
+        imageColor.color = Color.Lerp(imageColor.color, targetColor, 0.05f);
         
     }
 
@@ -48,7 +48,7 @@ public class colorChange : MonoBehaviour
     public void backColor()
     {
         targetColor = color1;
-        isChangeColor = false;
+        //isChangeColor = false;
     }
 
     

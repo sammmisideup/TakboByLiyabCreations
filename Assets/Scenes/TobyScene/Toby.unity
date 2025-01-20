@@ -22721,7 +22721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1346928521
 Transform:
   m_ObjectHideFlags: 0
@@ -22751,7 +22751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageColor: {fileID: 925553675}
   color1: {r: 1, g: 1, b: 1, a: 0}
-  color2: {r: 1, g: 1, b: 1, a: 1}
+  color2: {r: 0, g: 0, b: 0, a: 1}
   isChangeColor: 0
 --- !u!65 &1346928523
 BoxCollider:

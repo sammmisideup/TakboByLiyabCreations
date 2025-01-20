@@ -22,7 +22,7 @@ public class ClassicPlayerController : MonoBehaviour
     public CollectibleManager collectibleManager;  // Reference to CollectibleManager for item collection
     private bool hasCollectedStar = false;
 
-    [Header("Star System")]
+    [Header("Animation")]
     public Animator tobyAnimator;
 
     [SerializeField] private ParticleSystem ItemsSmokeParticle = default;
@@ -90,9 +90,6 @@ public class ClassicPlayerController : MonoBehaviour
 
       void FixedUpdate()
     {
-        // Ground Check using Raycast
-        //isGrounded = Physics.Raycast(transform.position, Vector3.down, 1.1f);
-
         // Player Jump
         if (jumpRequest && isGrounded)
         {
@@ -111,13 +108,6 @@ public class ClassicPlayerController : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); // Reset vertical velocity
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
-// private void OnCollisionEnter(Collision collision)
-// {
-//     if (collision.gameObject.CompareTag("Ground"))
-//     {
-//         isGrounded = true;
-//     }
-// }
 
     public void GameOverNa()
     {

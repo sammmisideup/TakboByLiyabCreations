@@ -4,28 +4,58 @@ using UnityEngine;
 
 public class PlatformSpawner : MonoBehaviour
 {
-    [Header("Platform Settings")]
-    public List<GameObject> platformPrefabs; 
-    public Transform spawnPoint;            
-    public Transform parentObject;          
-    public float followOffset = 5f;         
+    public static PlatformSpawner instance;
 
-    [Header("Trigger Settings")]
-    public Transform groundDetector;      
-    public float detectionRadius = 0.5f;   
-    public string groundTag = "Ground";    
+    [Header("Platform")]
+    public List<GameObject> level1Prefabs; 
+    public List<GameObject> level2Prefabs; 
+    public List<GameObject> level3Prefabs; 
+    public Transform spawnPoint;
+    public Transform parentObject;
+    public float followOffset = 5f;
 
-    [Header("Spawn Settings")]
-    public float spawnOffset = 2f;        
+    [Header("Trigger")]
+    public Transform groundDetector;
+    public float detectionRadius = 0.5f;
+    public string groundTag = "Ground";
+
+    [Header("Spawn")]
+    public float spawnOffset1 = 2f;
+    public float spawnOffset2 = 3f;
+    public float spawnOffset3 = 4f;
+    private int currentOffsetIndex = 0;
+    private float[] spawnOffsets;
 
     private List<GameObject> activePlatforms = new List<GameObject>();
     private bool isGroundDetected;
-    private bool canSpawn = true;         
+    public bool canSpawn = true;
+
+    public float platformLifetime = 10f;
+
+    private List<GameObject> currentPrefabs;
+    private float timeElapsed = 0f;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
+
+    void Start()
+    {
+        //pagitan ng spawn
+        spawnOffsets = new float[] { spawnOffset1, spawnOffset2, spawnOffset3 };
+
+        currentPrefabs = level1Prefabs;
+    }
 
     void Update()
     {
+        //spawn offset detect
         MoveSpawnerWithOffset();
         isGroundDetected = IsGroundDetected();
+
+        HandlePrefabLevelSwitch();
 
         if (!isGroundDetected && canSpawn)
         {
@@ -40,6 +70,7 @@ public class PlatformSpawner : MonoBehaviour
 
     private bool IsGroundDetected()
     {
+        //ground detect
         Collider[] colliders = Physics.OverlapSphere(groundDetector.position, detectionRadius);
         foreach (Collider collider in colliders)
         {
@@ -53,16 +84,16 @@ public class PlatformSpawner : MonoBehaviour
 
     private void SpawnPlatform()
     {
-        if (platformPrefabs.Count == 0)
+        if (currentPrefabs.Count == 0)
         {
-            Debug.LogWarning("No platform prefabs available for spawning!");
+            Debug.LogWarning("No platform available");
             return;
         }
         canSpawn = false;
 
-        int randomIndex = Random.Range(0, platformPrefabs.Count);
-        GameObject newPlatform = Instantiate(platformPrefabs[randomIndex], spawnPoint.position, platformPrefabs[randomIndex].transform.rotation);
-        newPlatform.transform.localScale = platformPrefabs[randomIndex].transform.localScale;
+        int randomIndex = Random.Range(0, currentPrefabs.Count);
+        GameObject newPlatform = Instantiate(currentPrefabs[randomIndex], spawnPoint.position, currentPrefabs[randomIndex].transform.rotation);
+        newPlatform.transform.localScale = currentPrefabs[randomIndex].transform.localScale;
 
         if (parentObject != null)
         {
@@ -73,18 +104,45 @@ public class PlatformSpawner : MonoBehaviour
 
         Debug.Log("Platform spawned: " + newPlatform.name);
 
+        Destroy(newPlatform, platformLifetime);
+
         StartCoroutine(EnableSpawningAfterOffset());
     }
 
     private IEnumerator EnableSpawningAfterOffset()
     {
-        yield return new WaitForSeconds(spawnOffset);
+        yield return new WaitForSeconds(spawnOffsets[currentOffsetIndex]);
         canSpawn = true;
+
+        currentOffsetIndex = (currentOffsetIndex + 1) % spawnOffsets.Length;
+    }
+
+    private void HandlePrefabLevelSwitch()
+    {
+        timeElapsed += Time.deltaTime;
+
+        if (timeElapsed >= 180f)
+        {
+
+            currentPrefabs = new List<GameObject>();
+            currentPrefabs.AddRange(level1Prefabs);
+            currentPrefabs.AddRange(level2Prefabs);
+            currentPrefabs.AddRange(level3Prefabs);
+        }
+        else if (timeElapsed >= 60f)
+        {
+
+            currentPrefabs = level2Prefabs;
+        }
+        else
+        {
+
+            currentPrefabs = level1Prefabs;
+        }
     }
 
     private void OnDrawGizmos()
     {
-
         if (groundDetector != null)
         {
             Gizmos.color = Color.green;

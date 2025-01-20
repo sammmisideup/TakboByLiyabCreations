@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2557816219051978412}
   - component: {fileID: 6818297673385447014}
   - component: {fileID: 6881162084882539870}
+  - component: {fileID: -1750863802194378131}
   m_Layer: 0
   m_Name: daga 1 1
   m_TagString: MovingObstacle
@@ -112,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a6ac336150095b46b346b18ef250800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smokeParticle: {fileID: 0}
+  smokeParticle: {fileID: 8336304168837348438, guid: dbfbc174b8d403f4d9611c01bdd5601d, type: 3}
 --- !u!54 &6881162084882539870
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,5 +128,19 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 124
   m_CollisionDetection: 1
+--- !u!114 &-1750863802194378131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844606757195018702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad331c48e7f6f4340a9812aaf8e6f051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carRG: {fileID: 6881162084882539870}
+  carSpeed: 10

@@ -4,28 +4,16 @@ using UnityEngine;
 
 public class ParallaxBackground : MonoBehaviour
 {
-    public Transform cameraTransform;  
-    public float parallaxEffectMultiplier = 0.5f; 
-
-    private Vector3 lastCameraPosition;
-
-    void Start()
-    {
-        if (cameraTransform == null)
-        {
-            cameraTransform = Camera.main.transform;
-        }
-
-        lastCameraPosition = cameraTransform.position;
-    }
-
+    public float speed = 2f;
+    public float resetPosition = 20f;
+    public float startPosition = 0f; 
     void Update()
     {
-        Vector3 cameraMovement = new Vector3(0, cameraTransform.position.y - lastCameraPosition.y, 0);
-        Vector3 newPosition = transform.position + cameraMovement * parallaxEffectMultiplier;
-        
-        transform.position = newPosition;
+        transform.position += Vector3.left * speed * Time.deltaTime;
 
-        lastCameraPosition = cameraTransform.position;
+        if (transform.position.x <= resetPosition)
+        {
+            transform.position = new Vector3(startPosition, transform.position.y, transform.position.z);
+        }
     }
 }
