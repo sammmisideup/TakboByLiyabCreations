@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class ParallaxBG2 : MonoBehaviour
 {
+    public static ParallaxBG2 instance;
 
     private float startPos, length;
     public GameObject cam;
     public float parallaxEffect;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()

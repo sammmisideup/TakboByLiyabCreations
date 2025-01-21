@@ -41,6 +41,11 @@ public class EndlessMapForce : MonoBehaviour
             timeSinceLastIncrease = 0f;
         }
 
+        if(EndlessPlayerController.instance.timeRemaining <= 0)
+        {
+            endlessMapSpeed = 0f;
+        }
+
         // speedText.text = ((int)endlessMapSpeed).ToString();
         // scoreValue += 1f * Time.deltaTime;
     }

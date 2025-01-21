@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class EndlessPlayerController : MonoBehaviour
 {
+    public static EndlessPlayerController instance;
+
     public Rigidbody rb;
     public float jumpForce;
     private float jumpDown = 80f;
@@ -20,7 +22,7 @@ public class EndlessPlayerController : MonoBehaviour
     public Vector3 playerSpawner;
 
     public Image timerStamina;
-    float timeRemaining;
+    public float timeRemaining;
     public float maxTime;
     public float addedEnergy;
     public float minusEnergy;
@@ -34,7 +36,15 @@ public class EndlessPlayerController : MonoBehaviour
     [Header("Animation")]
     public Animator tobyAnimator;
 
-    public GameObject kalsadaPrefab;
+    
+
+    //public GameObject kalsadaPrefab;
+
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
 
     void Start()
     {
@@ -73,28 +83,15 @@ public class EndlessPlayerController : MonoBehaviour
         if (timeRemaining <= 0)
         {
             tobyAnimator.SetTrigger("dead");
-            EndlessMapForce.instance.enabled = false;
+            //EndlessMapForce.instance.enabled = false;
             isGrounded = false;
-            PlatformSpawner.instance.canSpawn = false;
-            ClonePlayer();
+            PlatformSpawner.instance.enabled = false;
+            ParallaxBG2.instance.enabled = false;
             Invoke("GameOverNa", 3f);
         }
 
         scoreText.text = ((int)scoreValue).ToString();
         scoreValue += 1f * Time.deltaTime;
-    }
-
-    void ClonePlayer()
-    {
-        // Instantiate the player prefab at a specific position and rotation
-        GameObject clone = Instantiate(kalsadaPrefab, new Vector3(0, 0, 0), Quaternion.identity);
-        
-        // Call the Initialize method on the cloned object
-        EndlessMapForce endlessForce = clone.GetComponent<EndlessMapForce>();
-        if (endlessForce != null)
-        {
-            endlessForce.endlessMapSpeed = default; // Call the initialization method
-        }
     }
 
     void FixedUpdate()
@@ -157,11 +154,6 @@ public class EndlessPlayerController : MonoBehaviour
             isGrab = true;
         }
     }
-
-    // private void OnTriggerExit(Collider col)
-    // {
-    //     isGrab = false;
-    // }
 
     void SpawnPlayer()
     {
