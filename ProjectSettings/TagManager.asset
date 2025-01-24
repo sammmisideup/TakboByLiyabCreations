@@ -17,6 +17,8 @@ TagManager:
   - Collectibles
   - GlowCamera
   - EndlessDestroy
+  - TutorialJump
+  - TutorialGrab
   layers:
   - Default
   - TransparentFX
