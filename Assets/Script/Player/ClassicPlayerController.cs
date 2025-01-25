@@ -11,7 +11,7 @@ public class ClassicPlayerController : MonoBehaviour
     public bool jumpRequest = false;
     public bool isGrab = false;
     public bool grabRequest= false;
-    public GameObject tutorialJump, tutorialGrab;
+    
 
     [Header("Player Health")]
     public Vector3 playerSpawner;
@@ -150,20 +150,6 @@ public class ClassicPlayerController : MonoBehaviour
         {
             isGrab = true;
         }
-
-        if (col.gameObject.tag == "TutorialJump")
-        {
-            tobyAnimator.SetBool("idle", true);
-            tutorialJump.SetActive(true);
-            ClassicMapForce.instance.classicMapSpeed = 0;
-        }
-        
-        if (col.gameObject.tag == "TutorialGrab")
-        {
-            tobyAnimator.SetBool("idle", true);
-            tutorialGrab.SetActive(true);
-            ClassicMapForce.instance.classicMapSpeed = 0;
-        }
     }
 
     private void OnTriggerExit(Collider col)
@@ -220,27 +206,6 @@ public class ClassicPlayerController : MonoBehaviour
                 isGrab = false;
             }
         }
-
-        if (col.gameObject.tag == "TutorialJump")
-        {
-            if (Input.GetButtonDown("Jump"))
-            {
-                tobyAnimator.SetBool("idle", false);
-                tutorialJump.SetActive(false);
-                ClassicMapForce.instance.classicMapSpeed = 40;
-            }
-        }
-
-        if (col.gameObject.tag == "TutorialGrab")
-        {
-            if (Input.GetKeyDown(KeyCode.G))  // Press G to collect item
-            {
-                tobyAnimator.SetBool("idle", false);
-                tutorialGrab.SetActive(false);
-                ClassicMapForce.instance.classicMapSpeed = 40;
-            }
-        }
-
     }
 
     void SpawnPlayer()

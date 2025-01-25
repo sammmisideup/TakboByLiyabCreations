@@ -214,8 +214,6 @@ MonoBehaviour:
   jumpRequest: 0
   isGrab: 0
   grabRequest: 0
-  tutorialJump: {fileID: 0}
-  tutorialGrab: {fileID: 0}
   playerSpawner: {x: 0, y: 0, z: 0}
   heart1: {fileID: 0}
   heart2: {fileID: 0}
@@ -5660,7 +5658,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111568091}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 774d3470b3e02e846a890ab76929a278, type: 3}
   m_Name: 
@@ -5714,7 +5712,7 @@ GameObject:
   - component: {fileID: 177289946}
   - component: {fileID: 177289947}
   m_Layer: 0
-  m_Name: 2
+  m_Name: TUT3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5728,8 +5726,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177289945}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -304.21, z: -306.00018}
-  m_LocalScale: {x: 47.3, y: 47.3, z: 47.3}
+  m_LocalPosition: {x: 0, y: -253.6, z: -306.00018}
+  m_LocalScale: {x: 61.5, y: 61.5, z: 61.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 293164334}
@@ -5776,7 +5774,7 @@ SpriteRenderer:
   m_SortingLayerID: -215236093
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9cad72c58169cae448428ef701a62568, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f7df6396868a494fbb7433b39ab7d37, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10901,8 +10899,6 @@ MonoBehaviour:
   jumpRequest: 0
   isGrab: 0
   grabRequest: 0
-  tutorialJump: {fileID: 0}
-  tutorialGrab: {fileID: 0}
   playerSpawner: {x: 0, y: 0, z: 0}
   heart1: {fileID: 0}
   heart2: {fileID: 0}
@@ -11046,7 +11042,7 @@ GameObject:
   - component: {fileID: 431998296}
   - component: {fileID: 431998297}
   m_Layer: 0
-  m_Name: 3
+  m_Name: TUT4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11060,8 +11056,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431998295}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -304.21, z: -306}
-  m_LocalScale: {x: 47.3, y: 47.3, z: 47.3}
+  m_LocalPosition: {x: 0, y: -253.6, z: -306}
+  m_LocalScale: {x: 61.5, y: 61.5, z: 61.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 293164334}
@@ -11108,7 +11104,7 @@ SpriteRenderer:
   m_SortingLayerID: -215236093
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a860925dddb370c4485d859a682d2e44, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 467ad5b94875d424a860b6db9b6d3ee2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11144,7 +11140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435419939}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 188.3, y: 3.1, z: 0.000008662614}
+  m_LocalPosition: {x: 195, y: 3.1, z: 0.000008662614}
   m_LocalScale: {x: 1.4114997, y: 1.2203178, z: 0.99999994}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16763,8 +16759,6 @@ MonoBehaviour:
   jumpRequest: 0
   isGrab: 0
   grabRequest: 0
-  tutorialJump: {fileID: 0}
-  tutorialGrab: {fileID: 0}
   playerSpawner: {x: 0, y: 0, z: 0}
   heart1: {fileID: 0}
   heart2: {fileID: 0}
@@ -17244,7 +17238,7 @@ RectTransform:
   m_GameObject: {fileID: 834315917}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.32422593, y: 0.35252804, z: 0.5404807}
+  m_LocalScale: {x: 0.3181107, y: 0.345879, z: 0.53028667}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 540254137}
@@ -17252,7 +17246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000019073, y: -0.0000023842}
+  m_AnchoredPosition: {x: 2, y: -18}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &834315919
@@ -23337,8 +23331,6 @@ MonoBehaviour:
   jumpRequest: 0
   isGrab: 0
   grabRequest: 0
-  tutorialJump: {fileID: 0}
-  tutorialGrab: {fileID: 0}
   playerSpawner: {x: 0, y: 0, z: 0}
   heart1: {fileID: 242043895}
   heart2: {fileID: 1581924534}
@@ -24772,7 +24764,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865944159}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -247, y: 1103, z: -6}
+  m_LocalPosition: {x: -732, y: 1103, z: -6}
   m_LocalScale: {x: 73.68501, y: 73.36719, z: 32.081238}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30137,8 +30129,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126910842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 91, y: 1.69476, z: 0}
-  m_LocalScale: {x: 16.534054, y: 22.076939, z: 1}
+  m_LocalPosition: {x: 91.5, y: 1.69476, z: 0}
+  m_LocalScale: {x: 17.762575, y: 22.076939, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1068118940}
@@ -30418,6 +30410,21 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4011905663044489603, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}
   m_PrefabInstance: {fileID: 7406085304644633911}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5866666020398208184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4974943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a131a420b9d9419269ff99f32a27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialJump: {fileID: 177289945}
+  tutorialGrab: {fileID: 431998295}
+  tobyAnimator: {fileID: 5866666020398208180}
 --- !u!1001 &7169201882607709595
 PrefabInstance:
   m_ObjectHideFlags: 0

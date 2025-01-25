@@ -23,12 +23,13 @@ public class CountDown : MonoBehaviour
         countDownHolder.gameObject.SetActive(true);
         StartCoroutine(CountDownCo());
         //Time.timeScale = 0;
-        ClassicMapForce.instance.classicMapSpeed = 0;
+        ClassicMapForce.instance.enabled = false;
         tobyAnimator.SetBool("idle", true);
     }
 
     private IEnumerator CountDownCo()
     {
+    
         //tobyAnimator.SetTrigger("runn");
         if(countDownCount>0)
         {
@@ -49,7 +50,7 @@ public class CountDown : MonoBehaviour
         }else{
             //Time.timeScale = 1;
             tobyAnimator.SetBool("idle", false);
-            ClassicMapForce.instance.classicMapSpeed = 40f;
+            ClassicMapForce.instance.enabled = true;
             countDownHolder.gameObject.SetActive(false);
         }
     }
