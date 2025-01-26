@@ -106,7 +106,7 @@ Material:
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
     - _GlowInner: 0
-    - _GlowOffset: -0.2
+    - _GlowOffset: 0
     - _GlowOuter: 0.25
     - _GlowPower: 1
     - _GradientScale: 6
@@ -135,8 +135,8 @@ Material:
     - _TextureHeight: 512
     - _TextureWidth: 512
     - _UnderlayDilate: 0
-    - _UnderlayOffsetX: 0.55
-    - _UnderlayOffsetY: -0.03
+    - _UnderlayOffsetX: 1
+    - _UnderlayOffsetY: -0.3
     - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
