@@ -13,28 +13,29 @@ public class CountDown : MonoBehaviour
     public GameObject countDownMessage;
     public GameObject countDownNum;
 
-    public GameObject player;
-    public Animator tobyAnimator;
+    public GameObject playerToby, playerNanay;
+    public Animator animatorToby, animatorNanay;
 
     void Start()
     {
-        tobyAnimator = player.GetComponent<Animator>();
+        animatorToby = playerToby.GetComponent<Animator>();
+        animatorNanay = playerNanay.GetComponent<Animator>();
         countDownCount = countDownStart;
         countDownHolder.gameObject.SetActive(true);
         StartCoroutine(CountDownCo());
         //Time.timeScale = 0;
         ClassicMapForce.instance.enabled = false;
-        tobyAnimator.SetBool("idle", true);
+        animatorToby.SetBool("idle", true);
+        animatorNanay.SetBool("idle", true);
     }
 
     private IEnumerator CountDownCo()
     {
     
-        //tobyAnimator.SetTrigger("runn");
         if(countDownCount>0)
         {
             countDownText.text = countDownCount.ToString();
-            //tobyAnimator.SetTrigger("runn");
+            
         }else{
             countDownMessage.gameObject.SetActive(true);
             countDownNum.gameObject.SetActive(false);
@@ -46,10 +47,11 @@ public class CountDown : MonoBehaviour
         if(countDownCount>=0)
         {
             StartCoroutine(CountDownCo());
-            //tobyAnimator.SetTrigger("runn");
+            
         }else{
             //Time.timeScale = 1;
-            tobyAnimator.SetBool("idle", false);
+            animatorToby.SetBool("idle", false);
+            animatorNanay.SetBool("idle", false);
             ClassicMapForce.instance.enabled = true;
             countDownHolder.gameObject.SetActive(false);
         }

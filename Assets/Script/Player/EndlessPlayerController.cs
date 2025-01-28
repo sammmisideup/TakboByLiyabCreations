@@ -165,9 +165,27 @@ public class EndlessPlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
-            tobyAnimator.SetTrigger("runn");
+            tobyAnimator.SetBool("run", true);
         }
     }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+            tobyAnimator.SetBool("run", true);
+        }
+    }
+
+private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
+            tobyAnimator.SetBool("run", false);
+        }
+    }
+
 
     private void OnTriggerStay(Collider col)
     {
