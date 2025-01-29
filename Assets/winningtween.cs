@@ -5,19 +5,20 @@ using UnityEngine;
 public class winningtween : MonoBehaviour
 {
     [SerializeField]
-    GameObject colorWheel, LevelComplete, backPanel, NextLevel, Back,
+    GameObject colorWheel, LevelComplete, backPanel, NextLevel, Back, YellowRibbon,
     star1, star2, star3;
     void Start()
     {
         LeanTween.rotateAround(colorWheel, Vector3.forward, -360, 10f).setLoopClamp();
-        LeanTween.scale(LevelComplete, new Vector3(1.5f, 1.5f), 2f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic).setOnComplete(LevelWin);
+        LeanTween.scale(LevelComplete, new Vector3(2f, 2f, 2f), 2f).setDelay(.5f).setEase(LeanTweenType.easeOutElastic).setOnComplete(LevelWin);
         LeanTween.scale(LevelComplete, new Vector3(1f, 1f, 1f), 2f).setDelay(1.7f).setEase(LeanTweenType.easeInOutCubic);
     }
     void LevelWin()
     {
         LeanTween.moveLocal(backPanel, new Vector3(0f, 0f, 0f), 0.7f).setDelay(.5f).setEase(LeanTweenType.easeOutCirc).setOnComplete(starAnim);
-        LeanTween.scale(NextLevel, new Vector3(1f, 1f, 1f), 2f).setDelay(.7f).setEase(LeanTweenType.easeOutElastic);
-        LeanTween.scale(Back, new Vector3(1f, 1f, 1f), 2f).setDelay(.8f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.scale(YellowRibbon, new Vector3(1f, 1f, 1f), 2f).setDelay(.7f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.scale(NextLevel, new Vector3(1f, 1f, 1f), 2f).setDelay(.8f).setEase(LeanTweenType.easeOutElastic);
+        LeanTween.scale(Back, new Vector3(1f, 1f, 1f), 2f).setDelay(.9f).setEase(LeanTweenType.easeOutElastic);
     }
 
     // Update is called once per frame
