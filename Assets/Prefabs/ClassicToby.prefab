@@ -1868,6 +1868,7 @@ GameObject:
   - component: {fileID: 7406085303022101593}
   - component: {fileID: 7406085303022101592}
   - component: {fileID: 7406085303022101575}
+  - component: {fileID: 5866666020398208184}
   m_Layer: 0
   m_Name: ClassicToby
   m_TagString: Player
@@ -1967,8 +1968,22 @@ MonoBehaviour:
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
-  tobyAnimator: {fileID: 0}
-  ItemsSmokeParticle: {fileID: 0}
+  animator: {fileID: 4011905663044489603}
+--- !u!114 &5866666020398208184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7640034103347679555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272a131a420b9d9419269ff99f32a27e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialJump: {fileID: 0}
+  tutorialGrab: {fileID: 0}
+  tobyAnimator: {fileID: 4011905663044489603}
 --- !u!1 &7875617983151185526
 GameObject:
   m_ObjectHideFlags: 0
