@@ -172,7 +172,7 @@ public class ClassicPlayerController : MonoBehaviour
             Debug.Log("SafeZone Reached! Collecting Third Star...");
             animator.SetTrigger("win");
             ClassicMapForce.instance.classicMapSpeed = 0;
-            Invoke("Winner", 3f);  // Trigger the Winner logic when reaching SafeZone
+            Invoke("Winner", 5f);  // Trigger the Winner logic when reaching SafeZone
         }
     }
 
