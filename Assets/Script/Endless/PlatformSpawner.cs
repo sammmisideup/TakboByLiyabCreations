@@ -7,9 +7,11 @@ public class PlatformSpawner : MonoBehaviour
     public static PlatformSpawner instance;
 
     [Header("Platform")]
-    public List<GameObject> level1Prefabs; 
-    public List<GameObject> level2Prefabs; 
-    public List<GameObject> level3Prefabs; 
+    public List<GameObject> level1Prefabs;
+    public List<GameObject> level2Prefabs;
+    public List<GameObject> level3Prefabs;
+    public List<GameObject> level4Prefabs;
+    public List<GameObject> level5Prefabs;
     public Transform spawnPoint;
     public Transform parentObject;
     public float followOffset = 5f;
@@ -43,18 +45,14 @@ public class PlatformSpawner : MonoBehaviour
 
     void Start()
     {
-        //pagitan ng spawn
         spawnOffsets = new float[] { spawnOffset1, spawnOffset2, spawnOffset3 };
-
         currentPrefabs = level1Prefabs;
     }
 
     void Update()
     {
-        //spawn offset detect
         MoveSpawnerWithOffset();
         isGroundDetected = IsGroundDetected();
-
         HandlePrefabLevelSwitch();
 
         if (!isGroundDetected && canSpawn)
@@ -70,7 +68,6 @@ public class PlatformSpawner : MonoBehaviour
 
     private bool IsGroundDetected()
     {
-        //ground detect
         Collider[] colliders = Physics.OverlapSphere(groundDetector.position, detectionRadius);
         foreach (Collider collider in colliders)
         {
@@ -101,11 +98,9 @@ public class PlatformSpawner : MonoBehaviour
         }
 
         activePlatforms.Add(newPlatform);
-
         Debug.Log("Platform spawned: " + newPlatform.name);
 
         Destroy(newPlatform, platformLifetime);
-
         StartCoroutine(EnableSpawningAfterOffset());
     }
 
@@ -113,30 +108,42 @@ public class PlatformSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(spawnOffsets[currentOffsetIndex]);
         canSpawn = true;
-
         currentOffsetIndex = (currentOffsetIndex + 1) % spawnOffsets.Length;
     }
 
     private void HandlePrefabLevelSwitch()
     {
         timeElapsed += Time.deltaTime;
+        float cycleTime = 90f;
+        float modTime = timeElapsed % cycleTime;
 
-        if (timeElapsed >= 180f)
+        if (modTime >= 75f)
         {
-
             currentPrefabs = new List<GameObject>();
             currentPrefabs.AddRange(level1Prefabs);
             currentPrefabs.AddRange(level2Prefabs);
             currentPrefabs.AddRange(level3Prefabs);
+            currentPrefabs.AddRange(level4Prefabs);
+            currentPrefabs.AddRange(level5Prefabs);
         }
-        else if (timeElapsed >= 60f)
+        else if (modTime >= 60f)
         {
-
+            currentPrefabs = level5Prefabs;
+        }
+        else if (modTime >= 45f)
+        {
+            currentPrefabs = level4Prefabs;
+        }
+        else if (modTime >= 30f)
+        {
+            currentPrefabs = level3Prefabs;
+        }
+        else if (modTime >= 15f)
+        {
             currentPrefabs = level2Prefabs;
         }
         else
         {
-
             currentPrefabs = level1Prefabs;
         }
     }

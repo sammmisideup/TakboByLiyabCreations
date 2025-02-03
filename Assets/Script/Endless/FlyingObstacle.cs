@@ -4,26 +4,15 @@ using UnityEngine;
 
 public class FlyingObstacle : MonoBehaviour
 {
-   
     public float speed = 5f;
-
-    private Vector3 moveDirection;
-
-    void Start()
-    {
-
-        moveDirection = new Vector3(-1, -1, 0).normalized; 
-    }
+    public float rotationSpeed = 200f;
 
     void Update()
     {
         
-        transform.position += moveDirection * speed * Time.deltaTime;
+        transform.position += Vector3.left * speed * Time.deltaTime;
 
        
-        if (transform.position.x < -10 || transform.position.y < -10) 
-        {
-            Destroy(gameObject);
-        }
+        transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
     }
 }

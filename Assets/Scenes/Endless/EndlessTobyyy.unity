@@ -6668,8 +6668,7 @@ MonoBehaviour:
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
-  tobyAnimator: {fileID: 0}
-  ItemsSmokeParticle: {fileID: 959720229}
+  animator: {fileID: 0}
 --- !u!199 &959720228
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -16457,8 +16456,7 @@ MonoBehaviour:
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
-  tobyAnimator: {fileID: 0}
-  ItemsSmokeParticle: {fileID: 989051105}
+  animator: {fileID: 0}
 --- !u!136 &989051107
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -21722,8 +21720,7 @@ MonoBehaviour:
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
-  tobyAnimator: {fileID: 0}
-  ItemsSmokeParticle: {fileID: 1105685970}
+  animator: {fileID: 0}
 --- !u!23 &1105685974
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26654,7 +26651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a378868356f0ae8469781f486e23b92d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.112
+  speed: 0.012
 --- !u!64 &1168635056
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -27044,7 +27041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1383132722
 Transform:
   m_ObjectHideFlags: 0
@@ -27184,7 +27181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1532571120
 Transform:
   m_ObjectHideFlags: 0
@@ -27275,7 +27272,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1648915787}
-  - component: {fileID: 1648915786}
   - component: {fileID: 1648915788}
   - component: {fileID: 1648915789}
   m_Layer: 0
@@ -27285,18 +27281,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1648915786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648915785}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f210c8e5969952441a005ae407fdbbf3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1648915787
 Transform:
   m_ObjectHideFlags: 0
@@ -27339,23 +27323,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level1Prefabs:
-  - {fileID: 2805249895169364839, guid: 001b1140ef495a346a7f9f51f7b7109d, type: 3}
-  - {fileID: 2805249895169364839, guid: 0777099113a30d44b9c254bd204f1ae6, type: 3}
-  - {fileID: 2805249895169364839, guid: 48717b62e3ca4ff4b8a575ad51355134, type: 3}
+  - {fileID: 2805249895169364839, guid: 5702e9a18f67f7f42a97182cfbf912af, type: 3}
+  - {fileID: 2805249895169364839, guid: 5702e9a18f67f7f42a97182cfbf912af, type: 3}
+  - {fileID: 2805249895169364839, guid: 5702e9a18f67f7f42a97182cfbf912af, type: 3}
   level2Prefabs:
   - {fileID: 2805249895169364839, guid: dcc6dba30a4b4744686ec631785eb802, type: 3}
   - {fileID: 2805249895169364839, guid: 48717b62e3ca4ff4b8a575ad51355134, type: 3}
   level3Prefabs:
   - {fileID: 2805249895169364839, guid: 7f49c3cf8ab86c649b01a44e41c230ae, type: 3}
   - {fileID: 2805249895169364839, guid: 5702e9a18f67f7f42a97182cfbf912af, type: 3}
+  level4Prefabs:
+  - {fileID: 2805249895169364839, guid: dcc6dba30a4b4744686ec631785eb802, type: 3}
+  - {fileID: 2805249895169364839, guid: 48717b62e3ca4ff4b8a575ad51355134, type: 3}
+  - {fileID: 2805249895169364839, guid: 5702e9a18f67f7f42a97182cfbf912af, type: 3}
+  level5Prefabs:
+  - {fileID: 2805249895169364839, guid: dcc6dba30a4b4744686ec631785eb802, type: 3}
+  - {fileID: 2805249895169364839, guid: 48717b62e3ca4ff4b8a575ad51355134, type: 3}
+  - {fileID: 2805249895169364839, guid: 5702e9a18f67f7f42a97182cfbf912af, type: 3}
+  - {fileID: 2805249895169364839, guid: 0e2d6e484106c0e4796b8fbbca96fd18, type: 3}
   spawnPoint: {fileID: 1648915787}
   parentObject: {fileID: 298884065}
   followOffset: 1
   groundDetector: {fileID: 8064480}
   detectionRadius: 3
   groundTag: Ground
-  spawnOffset1: 2
-  spawnOffset2: 4
+  spawnOffset1: 3
+  spawnOffset2: 6
   spawnOffset3: 3
   canSpawn: 1
   platformLifetime: 15
@@ -27919,13 +27912,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 95.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6442252489727944069, guid: 0777099113a30d44b9c254bd204f1ae6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8691002284146645004, guid: 0777099113a30d44b9c254bd204f1ae6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 175.6
       objectReference: {fileID: 0}
     - target: {fileID: 8691002284146645004, guid: 0777099113a30d44b9c254bd204f1ae6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.68
+      value: 2.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0777099113a30d44b9c254bd204f1ae6, type: 3}
