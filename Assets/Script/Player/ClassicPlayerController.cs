@@ -26,6 +26,14 @@ public class ClassicPlayerController : MonoBehaviour
     [Header("Animation")]
     public Animator animator;
 
+    [Header("Animation")]
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
 
     void Start()
     {
@@ -54,7 +62,7 @@ public class ClassicPlayerController : MonoBehaviour
             {
                 grabRequest = true;
                 animator.SetTrigger("grab");
-
+                audioManager.PlaySFX(audioManager.grab);
             }
 
         
@@ -128,12 +136,14 @@ public class ClassicPlayerController : MonoBehaviour
             health -= 1;
             Destroy(col.gameObject, 0.2f);
             animator.SetTrigger("recoil");
+            audioManager.PlaySFX(audioManager.recoil);
         }
 
         if (col.gameObject.tag == "ObstacleBelow")
         {
             health -= 1;
             Invoke("SpawnPlayer", 1f);
+            audioManager.PlaySFX(audioManager.recoil);
         }
 
         // Check for star collection
@@ -142,6 +152,7 @@ public class ClassicPlayerController : MonoBehaviour
             hasCollectedStar = true;
             starManager.CollectStar();  // Collect first star
             Destroy(col.gameObject);   // Destroy the star object
+            audioManager.PlaySFX(audioManager.star);
         }
 
         if (col.gameObject.tag == "Collectibles")
@@ -165,6 +176,7 @@ public class ClassicPlayerController : MonoBehaviour
             isGrounded = true;
             Debug.Log("Is Grounded: " + isGrounded);
             animator.SetBool("run", true);
+            audioManager.Play2SFX(audioManager.run);
         }
 
         if (collision.gameObject.tag == "SafeZone")
@@ -182,6 +194,7 @@ public class ClassicPlayerController : MonoBehaviour
         {
             isGrounded = false; // Set isGrounded to false when leaving the ground
             animator.SetBool("run", false);
+            audioManager.StopSFX(audioManager.run);
         }
     }
 
@@ -193,7 +206,7 @@ public class ClassicPlayerController : MonoBehaviour
             animator.SetBool("run", true);
         }
     }
-    
+
 
     private void OnTriggerStay(Collider col)
     {

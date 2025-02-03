@@ -19,6 +19,7 @@ TagManager:
   - EndlessDestroy
   - TutorialJump
   - TutorialGrab
+  - Audio
   layers:
   - Default
   - TransparentFX
