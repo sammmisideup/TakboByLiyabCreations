@@ -131,6 +131,11 @@ public class ClassicPlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
+        if (col.gameObject.tag == "FallingObject")
+        {
+            isGrounded = true;
+            audioManager.Play2SFX(audioManager.run);
+        }
         if (col.gameObject.tag == "Obstacle")
         {
             health -= 1;
@@ -166,6 +171,13 @@ public class ClassicPlayerController : MonoBehaviour
         if (col.gameObject.tag == "Collectibles")
         {
             isGrab = false;
+        }
+
+        if (col.gameObject.tag == "FallingObject")
+        {
+            isGrounded = false; // Set isGrounded to false when leaving the ground
+            animator.SetBool("run", false);
+            audioManager.StopSFX(audioManager.run);
         }
     }
 

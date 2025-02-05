@@ -54,7 +54,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SettingsScreen.unity
     guid: 393e1da4361201242b68f7924c54f10e
   - enabled: 1
-    path: Assets/Scenes/TobyScene/Toby.unity
+    path: Assets/Scenes/TobyScene/Toby1.unity
     guid: 12ae87414d0e92c428af988eb5e56b7e
   - enabled: 1
     path: Assets/Scenes/Endless/TobyEndless.unity
