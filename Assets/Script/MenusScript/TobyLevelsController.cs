@@ -19,8 +19,28 @@ public class TobyLevelsController : MonoBehaviour
         
     }
 
-    public void TLevel1()
+    public void TobyLevel1()
     {
-        SceneManager.LoadScene("Toby");
+        SceneManager.LoadScene("Toby1");
+    }
+    public void TobyLevel2()
+    {
+        SceneManager.LoadScene("Toby2");
+    }
+    public void TobyLevel3()
+    {
+        SceneManager.LoadScene("Toby3");
+    }
+    public void TobyLevel4()
+    {
+        SceneManager.LoadScene("Toby4");
+    }
+    public void TobyLevel5()
+    {
+        SceneManager.LoadScene("Toby5");
+    }
+    public void TobyLevel6()
+    {
+        SceneManager.LoadScene("Toby6");
     }
 }
