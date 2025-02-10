@@ -10,13 +10,14 @@ public class EndlessMapForce : MonoBehaviour
 
     [SerializeField] private Rigidbody2D endlessMapRG;
 
-    // public TextMeshProUGUI speedText;
-
-    public float endlessMapSpeed = 40f; 
+    public float baseSpeed = 40f;
     public float speedIncreaseInterval = 5f; 
     public float speedIncreaseAmount = 1f; 
 
-    private float timeSinceLastIncrease = 0f; 
+    private float elapsedTime = 0f; 
+
+    
+    public float endlessMapSpeed; 
 
     void Awake()
     {
@@ -26,27 +27,24 @@ public class EndlessMapForce : MonoBehaviour
 
     void Start()
     {
-
+        endlessMapSpeed = baseSpeed; 
     }
 
-    // Update is called once per frame
     void Update()
     {
+        elapsedTime += Time.deltaTime; 
+
+        
+        endlessMapSpeed = baseSpeed + (Mathf.Floor(elapsedTime / speedIncreaseInterval) * speedIncreaseAmount);
+
+       
         endlessMapRG.velocity = Vector2.left * endlessMapSpeed;
 
-        timeSinceLastIncrease += Time.deltaTime;
-        if (timeSinceLastIncrease >= speedIncreaseInterval)
+        
+        if (EndlessPlayerController.instance.timeRemaining <= 0)
         {
-            endlessMapSpeed += speedIncreaseAmount;
-            timeSinceLastIncrease = 0f;
+            endlessMapRG.velocity = Vector2.zero;
+            endlessMapSpeed = 0f; 
         }
-
-        if(EndlessPlayerController.instance.timeRemaining <= 0)
-        {
-            endlessMapSpeed = 0f;
-        }
-
-        // speedText.text = ((int)endlessMapSpeed).ToString();
-        // scoreValue += 1f * Time.deltaTime;
     }
 }

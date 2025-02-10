@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 1910161260367556117}
   - component: {fileID: 3255427563558052272}
   - component: {fileID: 777272631529592186}
+  - component: {fileID: 3902587580185868235}
+  - component: {fileID: 4129476004822137297}
+  - component: {fileID: 6552589809246249839}
   m_Layer: 0
   m_Name: styro
   m_TagString: Untagged
@@ -89,3 +92,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3902587580185868235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281715166213043375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1011083, y: 3.1743922, z: 2.1698437}
+  m_Center: {x: -0.010116044, y: 0.1935957, z: -0.000113010436}
+--- !u!65 &4129476004822137297
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281715166213043375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1011078, y: 3.1743922, z: 2.1698437}
+  m_Center: {x: -0.009932936, y: 0.19359666, z: -0.00011277202}
+--- !u!54 &6552589809246249839
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281715166213043375}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
