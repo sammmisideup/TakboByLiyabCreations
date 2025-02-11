@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CarSpawner : MonoBehaviour
 {
-    //[SerializeField] public GameObject[] obstaclePrefabs;
-    [SerializeField] public GameObject carPrefabs;
+    [SerializeField] public GameObject[] obstaclePrefabs;
+    //[SerializeField] public GameObject carPrefabs;
     public Transform spawnPoints;
     // public float obstacleSpawnTime = 2f;
-    public float obstacleSpeed = 1f;
+    //public float obstacleSpeed = 1f;
 
     // private float timeUntilObstacleSpawn;
 
@@ -40,9 +40,9 @@ public class CarSpawner : MonoBehaviour
 
     private void Spawn() 
     {
-        // GameObject obstacleToSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
+        GameObject obstacleToSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
 
-        GameObject spawnedObstacle = Instantiate(carPrefabs, spawnPoints.position, Quaternion.identity);
+        GameObject spawnedObstacle = Instantiate(obstacleToSpawn, spawnPoints.position, Quaternion.identity);
 
         // Rigidbody obstacleRB = spawnedObstacle.GetComponent<Rigidbody>();
         

@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 1955257604282772637}
   - component: {fileID: 1163253152847268994}
   m_Layer: 0
-  m_Name: jeep
+  m_Name: ClassicJeep
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

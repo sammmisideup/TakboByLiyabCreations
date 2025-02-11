@@ -164,6 +164,14 @@ public class ClassicPlayerController : MonoBehaviour
         {
             isGrab = true;
         }
+
+        if (col.gameObject.tag == "SafeZone")
+        {
+            Debug.Log("SafeZone Reached! Collecting Third Star...");
+            animator.SetTrigger("win");
+            ClassicMapForce.instance.classicMapSpeed = 0;
+            Invoke("Winner", 5f);  // Trigger the Winner logic when reaching SafeZone
+        }
     }
 
     private void OnTriggerExit(Collider col)
@@ -191,13 +199,7 @@ public class ClassicPlayerController : MonoBehaviour
             audioManager.Play2SFX(audioManager.run);
         }
 
-        if (collision.gameObject.tag == "SafeZone")
-        {
-            Debug.Log("SafeZone Reached! Collecting Third Star...");
-            animator.SetTrigger("win");
-            ClassicMapForce.instance.classicMapSpeed = 0;
-            Invoke("Winner", 5f);  // Trigger the Winner logic when reaching SafeZone
-        }
+        
     }
 
     private void OnCollisionExit(Collision collision)
