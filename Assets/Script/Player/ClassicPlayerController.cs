@@ -92,6 +92,7 @@ public class ClassicPlayerController : MonoBehaviour
                 animator.SetTrigger("dead");
                 ClassicMapForce.instance.classicMapSpeed = 0;
                 isGrounded = false;
+                jumpRequest = false;
                 Invoke("GameOverNa", 3f);
                 break;
         }
@@ -124,8 +125,7 @@ public class ClassicPlayerController : MonoBehaviour
 
     public void Winner()
     {
-        starManager.CollectStar();  // Award the third star
-        PlayerPrefs.SetInt("TotalStars", starManager.totalStars);  // Save the star count
+        
         SceneManager.LoadScene("WinningScene");  // Load the Winning Scene
     }
 
@@ -137,6 +137,13 @@ public class ClassicPlayerController : MonoBehaviour
             audioManager.Play2SFX(audioManager.run);
         }
         if (col.gameObject.tag == "Obstacle")
+        {
+            health -= 1;
+            Destroy(col.gameObject, 0.2f);
+            animator.SetTrigger("recoil");
+            audioManager.PlaySFX(audioManager.recoil);
+        }
+        if (col.gameObject.tag == "MovingObstacle")
         {
             health -= 1;
             Destroy(col.gameObject, 0.2f);
@@ -171,6 +178,9 @@ public class ClassicPlayerController : MonoBehaviour
             animator.SetTrigger("win");
             ClassicMapForce.instance.classicMapSpeed = 0;
             Invoke("Winner", 5f);  // Trigger the Winner logic when reaching SafeZone
+
+            starManager.CollectStar();  // Award the third star
+            PlayerPrefs.SetInt("TotalStars", starManager.totalStars);  // Save the star count
         }
     }
 
@@ -198,6 +208,13 @@ public class ClassicPlayerController : MonoBehaviour
             animator.SetBool("run", true);
             audioManager.Play2SFX(audioManager.run);
         }
+        if (collision.gameObject.tag == "MovingObstacle")
+        {
+            isGrounded = true;
+            Debug.Log("Is Grounded: " + isGrounded);
+            animator.SetBool("run", true);
+            //audioManager.Play2SFX(audioManager.run);
+        }
 
         
     }
@@ -209,6 +226,12 @@ public class ClassicPlayerController : MonoBehaviour
             isGrounded = false; // Set isGrounded to false when leaving the ground
             animator.SetBool("run", false);
             audioManager.StopSFX(audioManager.run);
+        }
+        if (collision.gameObject.tag == "MovingObstacle")
+        {
+            isGrounded = false; // Set isGrounded to false when leaving the ground
+            animator.SetBool("run", false);
+            //audioManager.StopSFX(audioManager.run);
         }
     }
 

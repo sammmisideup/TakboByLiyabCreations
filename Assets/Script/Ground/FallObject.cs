@@ -27,4 +27,13 @@ public class FallObject : MonoBehaviour
             FallingObject.velocity = Vector2.down * fallSpeed;
         }
     }
+    public void OnCollisionEnter(Collision other)
+    {
+        GameObject Whathit = other.gameObject;
+        if(other.gameObject.tag == "Player")
+        {
+            FallingObject.isKinematic = false;
+            FallingObject.velocity = Vector2.down * fallSpeed;
+        }
+    }
 }
