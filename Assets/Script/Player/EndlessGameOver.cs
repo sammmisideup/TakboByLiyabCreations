@@ -30,7 +30,7 @@ public class EndlessGameOver : MonoBehaviour
 
     public void EndlessTryAgain()
     {
-        SceneManager.LoadScene("EndlessMode");
+        SceneManager.LoadScene("EndlessCharacterSelection");
     }
 
     public void EndlessBack()
