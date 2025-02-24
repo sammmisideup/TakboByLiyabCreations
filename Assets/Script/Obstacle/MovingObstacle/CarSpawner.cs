@@ -7,6 +7,8 @@ public class CarSpawner : MonoBehaviour
     [SerializeField] public GameObject[] obstaclePrefabs;
     //[SerializeField] public GameObject carPrefabs;
     public Transform spawnPoints;
+    public GameObject warningSign;
+
     // public float obstacleSpawnTime = 2f;
     //public float obstacleSpeed = 1f;
 
@@ -35,6 +37,7 @@ public class CarSpawner : MonoBehaviour
         if(col.gameObject.tag == "Player")
         {
             Spawn();
+            WarningRepeat();
         }
     }
 
@@ -46,5 +49,23 @@ public class CarSpawner : MonoBehaviour
 
         // Rigidbody obstacleRB = spawnedObstacle.GetComponent<Rigidbody>();
         
+    }
+    public void WarningRepeat()
+    {
+       WarningStart();
+       Invoke("WarningEnd", 0.2f);
+       Invoke("WarningStart", 0.4f);
+       Invoke("WarningEnd", 0.6f);
+       Invoke("WarningStart", 0.8f);
+       Invoke("WarningEnd", 1f);
+    }
+
+    public void WarningStart()
+    {
+        warningSign.gameObject.SetActive(true);
+    }
+    public void WarningEnd()
+    {
+        warningSign.gameObject.SetActive(false);
     }
 }

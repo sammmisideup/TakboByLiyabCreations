@@ -13,20 +13,20 @@ public class CountDown : MonoBehaviour
     public GameObject countDownMessage;
     public GameObject countDownNum;
 
-    public GameObject playerToby, playerNanay;
-    public Animator animatorToby, animatorNanay;
+    public GameObject player;
+    public Animator animator;
 
     void Start()
     {
-        animatorToby = playerToby.GetComponent<Animator>();
-        animatorNanay = playerNanay.GetComponent<Animator>();
+        animator = player.GetComponent<Animator>();
+        //animatorNanay = playerNanay.GetComponent<Animator>();
         countDownCount = countDownStart;
         countDownHolder.gameObject.SetActive(true);
         StartCoroutine(CountDownCo());
         //Time.timeScale = 0;
         ClassicMapForce.instance.enabled = false;
-        animatorToby.SetBool("idle", true);
-        animatorNanay.SetBool("idle", true);
+        animator.SetBool("idle", true);
+        //animatorNanay.SetBool("idle", true);
     }
 
     private IEnumerator CountDownCo()
@@ -50,8 +50,8 @@ public class CountDown : MonoBehaviour
             
         }else{
             //Time.timeScale = 1;
-            animatorToby.SetBool("idle", false);
-            animatorNanay.SetBool("idle", false);
+            animator.SetBool("idle", false);
+            //animatorNanay.SetBool("idle", false);
             ClassicMapForce.instance.enabled = true;
             countDownHolder.gameObject.SetActive(false);
         }

@@ -77,9 +77,10 @@ GameObject:
   - component: {fileID: 1589317317413066290}
   - component: {fileID: 1589317317414571228}
   - component: {fileID: 1589317317405456824}
+  - component: {fileID: 1103632091}
   m_Layer: 0
   m_Name: WaterPlane 1
-  m_TagString: Untagged
+  m_TagString: ObstacleBelow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +94,7 @@ Transform:
   m_GameObject: {fileID: 1589317317416281628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.4, y: -39.2, z: -653.99854}
-  m_LocalScale: {x: 17.873, y: 17.873, z: 17.873}
+  m_LocalScale: {x: 262.46964, y: 167.16747, z: 167.16747}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1585756568139190672}
@@ -170,3 +171,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   ignoreOcclusionCulling: 1
+--- !u!65 &1103632091
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589317317416281628}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.999999, y: 2.2204459e-16, z: 9.999999}
+  m_Center: {x: -0.000000059604645, y: 0, z: 0.0000038146973}

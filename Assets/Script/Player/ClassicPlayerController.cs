@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class ClassicPlayerController : MonoBehaviour
 {
+    public static ClassicPlayerController instance;
     [Header("Player Movement")]
     public Rigidbody rb;
     public float jumpForce;
@@ -15,6 +16,7 @@ public class ClassicPlayerController : MonoBehaviour
 
     [Header("Player Health")]
     public Vector3 playerSpawner;
+    public bool isSpawned;
     public GameObject heart1, heart2, heart3;
     public static int health;
 
@@ -30,7 +32,10 @@ public class ClassicPlayerController : MonoBehaviour
     AudioManager audioManager;
 
     private void Awake()
-    {
+    {   
+        if(instance == null)
+            instance= this;
+
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
@@ -41,6 +46,7 @@ public class ClassicPlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         rb.useGravity = true;
         playerSpawner = transform.position;
+        isSpawned = true;
 
         // Initialize health system
         health = 3;
@@ -93,6 +99,7 @@ public class ClassicPlayerController : MonoBehaviour
                 ClassicMapForce.instance.classicMapSpeed = 0;
                 isGrounded = false;
                 jumpRequest = false;
+                isSpawned = false;
                 Invoke("GameOverNa", 3f);
                 break;
         }
@@ -151,10 +158,11 @@ public class ClassicPlayerController : MonoBehaviour
             audioManager.PlaySFX(audioManager.recoil);
         }
 
-        if (col.gameObject.tag == "ObstacleBelow")
+        if (col.gameObject.tag == "ObstacleBelow" && isSpawned)
         {
             health -= 1;
             Invoke("SpawnPlayer", 1f);
+            animator.SetTrigger("recoil");
             audioManager.PlaySFX(audioManager.recoil);
         }
 
@@ -260,6 +268,14 @@ public class ClassicPlayerController : MonoBehaviour
 
     void SpawnPlayer()
     {
-        transform.position = playerSpawner;
+        if(isSpawned)
+        {
+            transform.position = playerSpawner;
+        }
+        else
+        {
+            return;
+        }
+        
     }
 }

@@ -14038,6 +14038,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 128080453}
     m_Modifications:
+    - target: {fileID: 323013837870793747, guid: 0753dc41b2a78f943a1c03b1a550ab10, type: 3}
+      propertyPath: fallSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594200282869267721, guid: 0753dc41b2a78f943a1c03b1a550ab10, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2536810426945178657, guid: 0753dc41b2a78f943a1c03b1a550ab10, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -14085,6 +14093,10 @@ PrefabInstance:
     - target: {fileID: 2918155571828053659, guid: 0753dc41b2a78f943a1c03b1a550ab10, type: 3}
       propertyPath: m_Name
       value: sirang_kalsada 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2918155571828053659, guid: 0753dc41b2a78f943a1c03b1a550ab10, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0753dc41b2a78f943a1c03b1a550ab10, type: 3}
@@ -15084,10 +15096,8 @@ MonoBehaviour:
   countDownHolder: {fileID: 1610380166}
   countDownMessage: {fileID: 936440169}
   countDownNum: {fileID: 1102764737}
-  playerToby: {fileID: 4974943}
-  playerNanay: {fileID: 1111901076863513207}
-  animatorToby: {fileID: 5866666020398208180}
-  animatorNanay: {fileID: 1111901076863513208}
+  player: {fileID: 4974943}
+  animator: {fileID: 5866666020398208180}
 --- !u!1 &1673904040
 GameObject:
   m_ObjectHideFlags: 0
@@ -16244,11 +16254,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f92a26ebb399a3b45aa3fc54cc1bdde2, type: 3}
---- !u!1 &1111901076863513207 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 308084755064934355, guid: f92a26ebb399a3b45aa3fc54cc1bdde2, type: 3}
-  m_PrefabInstance: {fileID: 804118280012381604}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1111901076863513208 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6479964132410281747, guid: f92a26ebb399a3b45aa3fc54cc1bdde2, type: 3}

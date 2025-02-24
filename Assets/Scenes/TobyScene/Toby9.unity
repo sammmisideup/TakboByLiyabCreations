@@ -15255,10 +15255,8 @@ MonoBehaviour:
   countDownHolder: {fileID: 1610380166}
   countDownMessage: {fileID: 936440169}
   countDownNum: {fileID: 1102764737}
-  playerToby: {fileID: 4974943}
-  playerNanay: {fileID: 1111901076863513207}
-  animatorToby: {fileID: 5866666020398208180}
-  animatorNanay: {fileID: 1111901076863513208}
+  player: {fileID: 4974943}
+  animator: {fileID: 5866666020398208180}
 --- !u!1001 &1620082199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16410,11 +16408,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f92a26ebb399a3b45aa3fc54cc1bdde2, type: 3}
---- !u!1 &1111901076863513207 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 308084755064934355, guid: f92a26ebb399a3b45aa3fc54cc1bdde2, type: 3}
-  m_PrefabInstance: {fileID: 804118280012381604}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1111901076863513208 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6479964132410281747, guid: f92a26ebb399a3b45aa3fc54cc1bdde2, type: 3}
