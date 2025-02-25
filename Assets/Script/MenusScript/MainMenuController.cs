@@ -38,7 +38,15 @@ public class MainMenuController : MonoBehaviour
     {
         SceneManager.LoadScene("StoryMode");
     }
-        public void QuitGame()
+    public void ForAds()
+    {
+        SceneManager.LoadScene("ForAds");
+    }
+    public void ForAds1()
+    {
+        SceneManager.LoadScene("ForAds1");
+    }
+    public void QuitGame()
     {
         Debug.Log("quit sha");
         Application.Quit();

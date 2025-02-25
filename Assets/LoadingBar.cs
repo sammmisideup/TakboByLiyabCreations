@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement; // For scene management
 public class LoadingBar : MonoBehaviour
 {
     public Transform loadingBarImage; // Reference to the loading bar image
+    public string nextSceneName = "StartScreen"; // Set this in the Inspector
     public float TargetAmount = 100.0f; // Target amount to reach
     public float speed = 30; // Speed at which the bar fills
 
@@ -24,12 +25,19 @@ public class LoadingBar : MonoBehaviour
         // Fill the loading bar
         if (CurrentAmount < TargetAmount)
         {
-            CurrentAmount += speed * Time.deltaTime;
-            loadingBarImage.GetComponent<Image>().fillAmount = CurrentAmount / 100.0f;
+            CurrentAmount = Mathf.Clamp(CurrentAmount + speed * Time.deltaTime, 0, TargetAmount);
+            if (loadingBarImage != null)
+            {
+                Image barImage = loadingBarImage.GetComponent<Image>();
+                if (barImage != null)
+                {
+                    barImage.fillAmount = CurrentAmount / TargetAmount;
+                }
+            }
         }
         else
         {
-            // Once the bar is full, transition to the next scene
+            // Once the bar is full, transition to the specified scene
             LoadNextScene();
         }
     }
@@ -37,7 +45,13 @@ public class LoadingBar : MonoBehaviour
     // Method to load the next scene
     void LoadNextScene()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex; // Get current scene index
-        SceneManager.LoadScene("StartScreen"); // Load the next scene in the build order
+        if (!string.IsNullOrEmpty(nextSceneName))
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            Debug.LogError("Next scene name is not set in the Inspector!");
+        }
     }
 }
