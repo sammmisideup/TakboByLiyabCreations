@@ -1700,10 +1700,8 @@ MonoBehaviour:
   countDownHolder: {fileID: 429716635}
   countDownMessage: {fileID: 428368388}
   countDownNum: {fileID: 873826219}
-  playerToby: {fileID: 655587168}
-  playerNanay: {fileID: 1798328608}
-  animatorToby: {fileID: 655587170}
-  animatorNanay: {fileID: 1798328609}
+  player: {fileID: 1798328608}
+  animator: {fileID: 1798328609}
 --- !u!1 &445910081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,6 +2101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs: []
   spawnPoints: {fileID: 812131318}
+  warningSign: {fileID: 0}
 --- !u!65 &560747970
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2322,6 +2321,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
@@ -7416,6 +7416,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 478974514}
   heart2: {fileID: 79459793}
   heart3: {fileID: 1585362008}
@@ -7498,19 +7499,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2333839832806186129, guid: 93e78713c8c648c479a4a7048c9e964c, type: 3}
   m_PrefabInstance: {fileID: 1636500726}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &655587168 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7640034103347679555, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}
-  m_PrefabInstance: {fileID: 849943860}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &655587169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7011271350179908601, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}
-  m_PrefabInstance: {fileID: 849943860}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &655587170 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4011905663044489603, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}
   m_PrefabInstance: {fileID: 849943860}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &664190131
@@ -7544,8 +7535,8 @@ Transform:
   - {fileID: 1200257424}
   - {fileID: 1238648614}
   - {fileID: 158305225}
-  - {fileID: 1320594161}
   - {fileID: 1903709579}
+  - {fileID: 1320594161}
   - {fileID: 651428034}
   - {fileID: 1381116050}
   m_Father: {fileID: 1109488898}
@@ -7699,6 +7690,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
@@ -25537,6 +25529,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}

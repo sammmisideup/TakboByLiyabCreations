@@ -1825,10 +1825,8 @@ MonoBehaviour:
   countDownHolder: {fileID: 560477129}
   countDownMessage: {fileID: 709410827}
   countDownNum: {fileID: 1198944619}
-  playerToby: {fileID: 2131768432}
-  playerNanay: {fileID: 1348773654}
-  animatorToby: {fileID: 2131768434}
-  animatorNanay: {fileID: 1348773655}
+  player: {fileID: 1348773654}
+  animator: {fileID: 1348773655}
 --- !u!1 &568952670
 GameObject:
   m_ObjectHideFlags: 0
@@ -6881,6 +6879,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
@@ -14391,6 +14390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs: []
   spawnPoints: {fileID: 1225095635}
+  warningSign: {fileID: 0}
 --- !u!65 &1239063616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14743,6 +14743,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
@@ -19722,6 +19723,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 706972397}
   heart2: {fileID: 1579832682}
   heart3: {fileID: 848204712}
@@ -22485,19 +22487,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0753dc41b2a78f943a1c03b1a550ab10, type: 3}
---- !u!1 &2131768432 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7640034103347679555, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}
-  m_PrefabInstance: {fileID: 722597028}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2131768433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7011271350179908601, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}
-  m_PrefabInstance: {fileID: 722597028}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2131768434 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4011905663044489603, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}
   m_PrefabInstance: {fileID: 722597028}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2131799925 stripped
@@ -22592,6 +22584,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}

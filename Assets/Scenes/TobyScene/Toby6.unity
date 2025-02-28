@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -215,6 +215,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
@@ -5840,6 +5841,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
@@ -7818,7 +7820,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4280361249
-  m_fontColor: {r: 0.12941177, g: 0.12941177, b: 0.12941177, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8421,8 +8423,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280558628
-  m_fontColor: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13600,6 +13602,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 242043895}
   heart2: {fileID: 1581924534}
   heart3: {fileID: 949537707}
@@ -15028,6 +15031,7 @@ MonoBehaviour:
   - {fileID: 5197654065195654273, guid: e9a61b82a1d262a4eab9fcb2b9f44ecc, type: 3}
   - {fileID: 6356755771527459382, guid: 2640e808fd2fa144cadbe54a5ee26e95, type: 3}
   spawnPoints: {fileID: 646508159}
+  warningSign: {fileID: 0}
 --- !u!1 &1701831707
 GameObject:
   m_ObjectHideFlags: 0
