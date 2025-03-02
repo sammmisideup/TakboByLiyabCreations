@@ -215,6 +215,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
@@ -5453,6 +5454,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72897941}
   m_CullTransparentMesh: 1
+--- !u!1 &76858071 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 973696927683436190, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+  m_PrefabInstance: {fileID: 120526863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &76858075 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 973696927683436191, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+  m_PrefabInstance: {fileID: 120526863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &111568091
 GameObject:
   m_ObjectHideFlags: 0
@@ -5526,6 +5537,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   classicMapRG: {fileID: 111568093}
   classicMapSpeed: 65
+--- !u!1001 &120526863
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 878766481}
+    m_Modifications:
+    - target: {fileID: 973696927683436190, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_Name
+      value: warningClassic
+      objectReference: {fileID: 0}
+    - target: {fileID: 973696927683436190, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 973696927683436191, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 973696927683436191, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 462
+      objectReference: {fileID: 0}
+    - target: {fileID: 973696927683436191, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -163
+      objectReference: {fileID: 0}
+    - target: {fileID: 973696927683436191, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -370
+      objectReference: {fileID: 0}
+    - target: {fileID: 973696927683436191, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 973696927683436191, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 973696927683436191, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 973696927683436191, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 973696927683436191, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 973696927683436191, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 973696927683436191, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 948072d67afb24d49858432adfa5b6f7, type: 3}
 --- !u!1001 &127990036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5900,6 +5972,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
@@ -6512,6 +6585,7 @@ MonoBehaviour:
   - {fileID: 5197654065195654273, guid: e9a61b82a1d262a4eab9fcb2b9f44ecc, type: 3}
   - {fileID: 6356755771527459382, guid: 2640e808fd2fa144cadbe54a5ee26e95, type: 3}
   spawnPoints: {fileID: 646508159}
+  warningSign: {fileID: 76858071}
 --- !u!65 &510579284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8016,6 +8090,7 @@ RectTransform:
   - {fileID: 547163112}
   - {fileID: 925553677}
   - {fileID: 293164334}
+  - {fileID: 76858075}
   m_Father: {fileID: 1119141908}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14171,6 +14246,7 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 242043895}
   heart2: {fileID: 1581924534}
   heart3: {fileID: 949537707}
@@ -14470,6 +14546,7 @@ MonoBehaviour:
   - {fileID: 5197654065195654273, guid: e9a61b82a1d262a4eab9fcb2b9f44ecc, type: 3}
   - {fileID: 6356755771527459382, guid: 2640e808fd2fa144cadbe54a5ee26e95, type: 3}
   spawnPoints: {fileID: 646508159}
+  warningSign: {fileID: 76858071}
 --- !u!65 &1222531968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15654,6 +15731,7 @@ MonoBehaviour:
   - {fileID: 5197654065195654273, guid: e9a61b82a1d262a4eab9fcb2b9f44ecc, type: 3}
   - {fileID: 6356755771527459382, guid: 2640e808fd2fa144cadbe54a5ee26e95, type: 3}
   spawnPoints: {fileID: 646508159}
+  warningSign: {fileID: 76858071}
 --- !u!1 &1701831707
 GameObject:
   m_ObjectHideFlags: 0

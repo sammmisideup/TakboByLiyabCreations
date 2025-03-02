@@ -9,6 +9,7 @@ public class colorChange : MonoBehaviour
     public Image imageColor;
     public Color color1, color2;
     Color targetColor;
+    public float speedChange;
 
     public bool isChangeColor;
     // Start is called before the first frame update
@@ -21,17 +22,12 @@ public class colorChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         if(isChangeColor == true)
         {
-                targetColor = color2;
-                isChangeColor = false;
-            
-        }
-        if(!isChangeColor)
-        {
-            Invoke("backColor", 5f);
-        }
-        imageColor.color = Color.Lerp(imageColor.color, targetColor, 0.05f);
+                imageColor.color = Color.Lerp(imageColor.color, targetColor, 0.3f);
+                Invoke("backColor", 0.5f);
+        }  
         
     }
 
@@ -41,14 +37,15 @@ public class colorChange : MonoBehaviour
         if(col.gameObject.tag == "Player")
         {
             isChangeColor = true;
-            
+            targetColor = color2;
         };
     }
 
     public void backColor()
     {
         targetColor = color1;
-        //isChangeColor = false;
+        imageColor.color = Color.Lerp(imageColor.color, targetColor, speedChange);
+        isChangeColor = false;
     }
 
     
