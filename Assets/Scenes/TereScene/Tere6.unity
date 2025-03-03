@@ -12726,7 +12726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &782969791
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19076,7 +19076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   classicMapRG: {fileID: 1068744970}
-  classicMapSpeed: 40
+  classicMapSpeed: 55
 --- !u!1001 &1079068104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25583,6 +25583,7 @@ MonoBehaviour:
   imageColor: {fileID: 1446591054}
   color1: {r: 1, g: 1, b: 1, a: 0}
   color2: {r: 0, g: 0, b: 0, a: 1}
+  speedChange: 0
   isChangeColor: 0
 --- !u!65 &1479551537
 BoxCollider:
