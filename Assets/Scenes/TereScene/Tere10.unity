@@ -6442,7 +6442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   classicMapRG: {fileID: 375106487}
-  classicMapSpeed: 40
+  classicMapSpeed: 63
 --- !u!1001 &420648798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6666,7 +6666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &444278381
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20247,7 +20247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1198126052074621127, guid: 10c2550e241aabe45949992b0a986318, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 169.87
+      value: 181.5
       objectReference: {fileID: 0}
     - target: {fileID: 1198126052074621127, guid: 10c2550e241aabe45949992b0a986318, type: 3}
       propertyPath: m_LocalPosition.y

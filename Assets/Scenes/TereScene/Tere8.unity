@@ -7032,7 +7032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &601800756
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14765,7 +14765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   classicMapRG: {fileID: 1303822348}
-  classicMapSpeed: 40
+  classicMapSpeed: 59
 --- !u!1 &1313471553
 GameObject:
   m_ObjectHideFlags: 0
