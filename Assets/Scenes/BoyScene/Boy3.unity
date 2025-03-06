@@ -19912,6 +19912,7 @@ MonoBehaviour:
   imageColor: {fileID: 925553675}
   color1: {r: 1, g: 1, b: 1, a: 0}
   color2: {r: 0, g: 0, b: 0, a: 1}
+  speedChange: 0
   isChangeColor: 0
 --- !u!65 &1346928523
 BoxCollider:
@@ -21135,11 +21136,12 @@ MonoBehaviour:
   SFXSource: {fileID: 701625454}
   SFXSource2: {fileID: 2109423246}
   background: {fileID: 8300000, guid: 684db758cbbd1f849a73098f56804dde, type: 3}
-  sweep: {fileID: 8300000, guid: 0be581b18cb39fb46acb885f592169ea, type: 3}
+  sweep: {fileID: 8300000, guid: c7f31d8d294eecb4c982fe87c2f372c5, type: 3}
   run: {fileID: 8300000, guid: 1015e932e3687714ba400bd86799ba72, type: 3}
   grab: {fileID: 8300000, guid: 34054c7794bcaff429323c5c4327c86a, type: 3}
   star: {fileID: 8300000, guid: 9b42c75016a693c45abe1a7df39b5b05, type: 3}
-  recoil: {fileID: 8300000, guid: b463aa7db8dd4d744bb769dbedf4ac9b, type: 3}
+  recoil: {fileID: 8300000, guid: f97e7eb63f79e2a448d072428b4d54e4, type: 3}
+  thunder: {fileID: 8300000, guid: 6e38adde688f4824d8b0168f2f203f98, type: 3}
 --- !u!4 &1701831709
 Transform:
   m_ObjectHideFlags: 0

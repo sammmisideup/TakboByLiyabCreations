@@ -12,11 +12,16 @@ public class colorChange : MonoBehaviour
     public float speedChange;
 
     public bool isChangeColor;
+
+    AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
         imageColor.color = color1;
         targetColor = color1;
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
     }
 
     // Update is called once per frame
@@ -26,7 +31,7 @@ public class colorChange : MonoBehaviour
         if(isChangeColor == true)
         {
                 imageColor.color = Color.Lerp(imageColor.color, targetColor, 0.3f);
-                Invoke("backColor", 0.5f);
+                Invoke("backColor", 1f);
         }  
         
     }
@@ -38,6 +43,7 @@ public class colorChange : MonoBehaviour
         {
             isChangeColor = true;
             targetColor = color2;
+            audioManager.PlaySFX(audioManager.thunder);
         };
     }
 

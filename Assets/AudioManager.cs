@@ -17,6 +17,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip grab;
     public AudioClip star;
     public AudioClip recoil;
+    public AudioClip thunder;
     //public AudioClip dead;
     //public AudioClip win;
 
