@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingBarImage: {fileID: 630802337}
-  nextSceneName: TobyLevels
+  nextSceneName: StoryMode
   TargetAmount: 100
   speed: 30
 --- !u!1 &630802336
