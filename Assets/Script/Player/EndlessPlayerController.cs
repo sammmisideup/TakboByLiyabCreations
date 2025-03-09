@@ -138,7 +138,7 @@ public class EndlessPlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.CompareTag("Obstacle"))
+        if (col.gameObject.CompareTag("Obstacle") || col.gameObject.CompareTag("MovingObstacle") || col.gameObject.CompareTag("FlyingObstacle"))
         {
             timeRemaining -= minusEnergy;
             Destroy(col.gameObject, 0.3f);

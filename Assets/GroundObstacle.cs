@@ -1,14 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerWarning : MonoBehaviour
+public class GroundObstacle : MonoBehaviour
 {
     public GameObject warningIcon;
     public AudioSource audioSource; // Reference to the AudioSource
     public AudioClip warningSound;  // Sound clip to play
 
     private bool isWarningActive = false;
-    public float warningDuration = 3f; 
+    public float warningDuration = 3f;
     public float blinkInterval = 0.5f;
 
     private void Start()
@@ -23,7 +23,7 @@ public class PlayerWarning : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Triggered by: " + other.gameObject.name);
-        if ((other.CompareTag("MovingObstacle") || other.CompareTag("FlyingObstacle")) && !isWarningActive)
+        if (other.CompareTag("FlyingObstacle") && !isWarningActive)
         {
             StartCoroutine(BlinkWarning());
         }

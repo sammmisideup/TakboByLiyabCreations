@@ -111,7 +111,7 @@ MonoBehaviour:
   endlessMapRG: {fileID: 678744773386468241}
   baseSpeed: 40
   speedIncreaseInterval: 5
-  speedIncreaseAmount: 1
+  speedIncreaseAmount: 2
   endlessMapSpeed: 35
 --- !u!61 &7135723144202593217
 BoxCollider2D:
@@ -687,7 +687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 844606757195018702, guid: ca4c754867a359d46bad8a4ac3e98437, type: 3}
       propertyPath: m_TagString
-      value: Obstacle
+      value: MovingObstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca4c754867a359d46bad8a4ac3e98437, type: 3}
@@ -798,7 +798,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 615062633543752256, guid: f7742aad6dccb304b92a007da24eabbf, type: 3}
       propertyPath: speed
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 615062633543752256, guid: f7742aad6dccb304b92a007da24eabbf, type: 3}
       propertyPath: followRange
@@ -810,7 +810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3551362745630618534, guid: f7742aad6dccb304b92a007da24eabbf, type: 3}
       propertyPath: m_TagString
-      value: Obstacle
+      value: FlyingObstacle
       objectReference: {fileID: 0}
     - target: {fileID: 3688717172629593977, guid: f7742aad6dccb304b92a007da24eabbf, type: 3}
       propertyPath: m_CollisionDetection

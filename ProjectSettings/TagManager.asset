@@ -20,6 +20,7 @@ TagManager:
   - TutorialJump
   - TutorialGrab
   - Audio
+  - FlyingObstacle
   layers:
   - Default
   - TransparentFX

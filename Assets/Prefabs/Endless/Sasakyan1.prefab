@@ -108,7 +108,7 @@ MonoBehaviour:
   endlessMapRG: {fileID: 678744773386468241}
   baseSpeed: 40
   speedIncreaseInterval: 5
-  speedIncreaseAmount: 1
+  speedIncreaseAmount: 2
   endlessMapSpeed: 35
 --- !u!61 &7135723144202593217
 BoxCollider2D:
@@ -468,6 +468,10 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6768615635887626616, guid: a4654992720707d429f8520e27d272a5, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -5495902117074765545, guid: 3ad196b652332a144a4549d3419aad3b, type: 3}
+    - target: {fileID: 6768615635887626616, guid: a4654992720707d429f8520e27d272a5, type: 3}
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
@@ -481,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7140997041924053493, guid: a4654992720707d429f8520e27d272a5, type: 3}
       propertyPath: m_TagString
-      value: Obstacle
+      value: MovingObstacle
       objectReference: {fileID: 0}
     - target: {fileID: 7229650298836391616, guid: a4654992720707d429f8520e27d272a5, type: 3}
       propertyPath: m_TagString

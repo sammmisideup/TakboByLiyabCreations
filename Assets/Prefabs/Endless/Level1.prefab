@@ -105,7 +105,7 @@ MonoBehaviour:
   endlessMapRG: {fileID: 678744773386468241}
   baseSpeed: 40
   speedIncreaseInterval: 5
-  speedIncreaseAmount: 1
+  speedIncreaseAmount: 2
   endlessMapSpeed: 35
 --- !u!61 &7135723144202593217
 BoxCollider2D:
