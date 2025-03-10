@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class GroundObstacle : MonoBehaviour
+public class KidlatEndless : MonoBehaviour
 {
     public GameObject warningIcon;
     public AudioSource audioSource; 
-    public AudioClip warningSound; 
+    public AudioClip warningSound;  
 
     private bool isWarningActive = false;
     public float warningDuration = 3f;
@@ -17,13 +17,13 @@ public class GroundObstacle : MonoBehaviour
             warningIcon.SetActive(false);
 
         if (audioSource == null)
-            audioSource = GetComponent<AudioSource>();
+            audioSource = GetComponent<AudioSource>(); 
     }
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Triggered by: " + other.gameObject.name);
-        if (other.CompareTag("Kidlat") && !isWarningActive)
+        if (other.CompareTag("FlyingObstacle") && !isWarningActive)
         {
             StartCoroutine(BlinkWarning());
         }
@@ -44,7 +44,7 @@ public class GroundObstacle : MonoBehaviour
         while (elapsedTime < warningDuration)
         {
             if (warningIcon != null)
-                warningIcon.SetActive(!warningIcon.activeSelf); 
+                warningIcon.SetActive(!warningIcon.activeSelf);
 
             yield return new WaitForSeconds(blinkInterval);
             elapsedTime += blinkInterval;

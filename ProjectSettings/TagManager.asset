@@ -21,6 +21,7 @@ TagManager:
   - TutorialGrab
   - Audio
   - FlyingObstacle
+  - Kidlat
   layers:
   - Default
   - TransparentFX
