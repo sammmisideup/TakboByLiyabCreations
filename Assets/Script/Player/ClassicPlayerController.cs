@@ -97,7 +97,7 @@ public class ClassicPlayerController : MonoBehaviour
                 heart3.gameObject.SetActive(false);
                 animator.SetTrigger("dead");
                 ClassicMapForce.instance.classicMapSpeed = 0;
-                ClassicPlayerController.instance.enabled = false;
+                //ClassicPlayerController.instance.enabled = false;
                 isGrounded = false;
                 jumpRequest = false;
                 isSpawned = false;

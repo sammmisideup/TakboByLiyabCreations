@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class TobyLevelsController : MonoBehaviour
 {
-    public GameObject[] tobyCS;
-    public int tobyIndex;
-    public GameObject cutSceneToby, nextButton, playButton;
-
+    // public GameObject[] tobyCS;
+    // public int tobyIndex;
+    // public GameObject cutSceneToby, nextButton, playButton;
+    public GameObject TobyCutScene, skipButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,45 +20,56 @@ public class TobyLevelsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < tobyCS.Length; i++)
-        if(i == tobyIndex)
-        {
-            tobyCS[i].SetActive(true);
-        }
-        else
-        {
-            tobyCS[i].SetActive(false);
-        }
+        // for(int i = 0; i < tobyCS.Length; i++)
+        // if(i == tobyIndex)
+        // {
+        //     tobyCS[i].SetActive(true);
+        // }
+        // else
+        // {
+        //     tobyCS[i].SetActive(false);
+        // }
         
-        if(tobyIndex == tobyCS.Length)
-        {
-            cutSceneToby.SetActive(false);
-        }
+        // if(tobyIndex == tobyCS.Length)
+        // {
+        //     cutSceneToby.SetActive(false);
+        // }
 
-        if(tobyIndex == 1)
-        {
-            nextButton.SetActive(true);
-        }
-        if(tobyIndex == 11)
-        {
-            nextButton.SetActive(false);
-            Invoke("DelayPlay", 8f);
-        }
+        // if(tobyIndex == 1)
+        // {
+        //     nextButton.SetActive(true);
+        // }
+        // if(tobyIndex == 11)
+        // {
+        //     nextButton.SetActive(false);
+        //     Invoke("DelayPlay", 8f);
+        // }
     }
     
-    public void NextCutScene()
+    // public void NextCutScene()
+    // {
+    //     nextButton.SetActive(false);
+    //     tobyIndex++;
+    //     Invoke("DelayNext", 5f);
+    // }
+    // public void DelayNext()
+    // {
+    //     nextButton.SetActive(true);
+    // }
+    // public void DelayPlay()
+    // {
+    //     playButton.SetActive(true);
+    // }
+
+    public void CutSCene()
     {
-        nextButton.SetActive(false);
-        tobyIndex++;
-        Invoke("DelayNext", 5f);
+        TobyCutScene.SetActive(true);
+        Invoke("DelaySkip", 10f);
+        Invoke("TobyLevel1", 60f);
     }
-    public void DelayNext()
+    public void DelaySkip()
     {
-        nextButton.SetActive(true);
-    }
-    public void DelayPlay()
-    {
-        playButton.SetActive(true);
+        skipButton.SetActive(true);
     }
 
     public void TobyLevel1()

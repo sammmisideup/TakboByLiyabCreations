@@ -10,19 +10,15 @@ public class LockLevel : MonoBehaviour
     public Button[] levelButtons;
     public int levelAt;
     // Start is called before the first frame update
-    void Awake()
-    {
-        if (instance == null)
-            instance = this;
-    }
+    
 
     void Start()
     {
-        levelAt = PlayerPrefs.GetInt("LevelAt", 2);
+        levelAt = PlayerPrefs.GetInt("LevelAt", 9);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
-            if(i + 2 > levelAt)
+            if(i + 9 > levelAt)
             levelButtons[i].interactable = false;
         }
     }

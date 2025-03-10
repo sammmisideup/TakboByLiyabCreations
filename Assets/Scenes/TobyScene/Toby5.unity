@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6732,7 +6732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2aa28864919f2c544b9d8285e8a39aa8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 51d34d63671d6d54eb7103dbb1ed3f6b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15039,6 +15039,7 @@ MonoBehaviour:
   grab: {fileID: 8300000, guid: 34054c7794bcaff429323c5c4327c86a, type: 3}
   star: {fileID: 8300000, guid: 9b42c75016a693c45abe1a7df39b5b05, type: 3}
   recoil: {fileID: 8300000, guid: b463aa7db8dd4d744bb769dbedf4ac9b, type: 3}
+  thunder: {fileID: 0}
 --- !u!4 &1701831709
 Transform:
   m_ObjectHideFlags: 0

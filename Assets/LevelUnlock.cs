@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class LevelUnlock : MonoBehaviour
 {
     public int LevelCount;
+    public int LevelNext;
     // Start is called before the first frame update
     void Start()
     {
-        LevelCount = LockLevel.instance.levelAt += 1;
+        LevelCount = SceneManager.GetActiveScene().buildIndex + 1;
+        LevelNext = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     public void OnTriggerEnter(Collider col)
@@ -18,5 +20,12 @@ public class LevelUnlock : MonoBehaviour
         {
             PlayerPrefs.SetInt("LevelAt", LevelCount);
         }
+
+        if(LevelNext > PlayerPrefs.GetInt("sceneLock"))
+        {
+            PlayerPrefs.SetInt("sceneLock", LevelNext);
+        }
     }
+
+    
 }
