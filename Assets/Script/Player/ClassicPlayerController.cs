@@ -24,6 +24,7 @@ public class ClassicPlayerController : MonoBehaviour
     public StarManager starManager;  // Reference to StarManager to update the star count
     public CollectibleManager collectibleManager;  // Reference to CollectibleManager for item collection
     private bool hasCollectedStar = false;
+    public int starValue;
 
     [Header("Animation")]
     public Animator animator;
@@ -190,6 +191,8 @@ public class ClassicPlayerController : MonoBehaviour
 
             starManager.CollectStar();  // Award the third star
             PlayerPrefs.SetInt("TotalStars", starManager.totalStars);  // Save the star count
+            starValue = PlayerPrefs.GetInt("FinalStar") + starManager.totalStars;
+            PlayerPrefs.SetInt("FinalStar", starValue);
         }
     }
 
