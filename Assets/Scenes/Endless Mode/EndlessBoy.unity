@@ -10950,7 +10950,7 @@ MonoBehaviour:
   timerStamina: {fileID: 1634213150}
   timeRemaining: 0
   maxTime: 100
-  addedEnergy: 10
+  addedEnergy: 40
   minusEnergy: 50
   ItemsSmokeParticle: {fileID: 959720229}
   gradient:
@@ -11159,8 +11159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level1Prefabs:
-  - {fileID: 2805249895169364839, guid: 7f49c3cf8ab86c649b01a44e41c230ae, type: 3}
   - {fileID: 2805249895169364839, guid: 0777099113a30d44b9c254bd204f1ae6, type: 3}
+  - {fileID: 2805249895169364839, guid: 7f49c3cf8ab86c649b01a44e41c230ae, type: 3}
   - {fileID: 2805249895169364839, guid: 734c2ec18858d084e92e97ebc19ed5be, type: 3}
   level2Prefabs:
   - {fileID: 2805249895169364839, guid: dcc6dba30a4b4744686ec631785eb802, type: 3}
@@ -11186,7 +11186,7 @@ MonoBehaviour:
   groundDetector: {fileID: 1549863502}
   detectionRadius: 3
   groundTag: Ground
-  spawnOffset1: 3
+  spawnOffset1: 4
   spawnOffset2: 6
   spawnOffset3: 3
   canSpawn: 1
@@ -11729,6 +11729,7 @@ MonoBehaviour:
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
+  starValue: 0
   animator: {fileID: 0}
 --- !u!199 &959720228
 ParticleSystemRenderer:
@@ -21518,6 +21519,7 @@ MonoBehaviour:
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
+  starValue: 0
   animator: {fileID: 0}
 --- !u!136 &989051107
 CapsuleCollider:
@@ -26799,6 +26801,7 @@ MonoBehaviour:
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
+  starValue: 0
   animator: {fileID: 0}
 --- !u!23 &1105685974
 MeshRenderer:

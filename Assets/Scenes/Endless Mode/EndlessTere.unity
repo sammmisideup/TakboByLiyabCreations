@@ -12448,6 +12448,7 @@ MonoBehaviour:
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
+  starValue: 0
   animator: {fileID: 0}
 --- !u!199 &959720228
 ParticleSystemRenderer:
@@ -22315,6 +22316,7 @@ MonoBehaviour:
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
+  starValue: 0
   animator: {fileID: 0}
 --- !u!136 &989051107
 CapsuleCollider:
@@ -27425,6 +27427,7 @@ MonoBehaviour:
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
+  starValue: 0
   animator: {fileID: 0}
 --- !u!23 &1105685974
 MeshRenderer:
@@ -27714,7 +27717,7 @@ MonoBehaviour:
   groundDetector: {fileID: 1883537198}
   detectionRadius: 3
   groundTag: Ground
-  spawnOffset1: 3
+  spawnOffset1: 4
   spawnOffset2: 6
   spawnOffset3: 3
   canSpawn: 1
@@ -27958,7 +27961,7 @@ MonoBehaviour:
   timerStamina: {fileID: 0}
   timeRemaining: 0
   maxTime: 100
-  addedEnergy: 10
+  addedEnergy: 40
   minusEnergy: 50
   ItemsSmokeParticle: {fileID: 1105685970}
   gradient:
