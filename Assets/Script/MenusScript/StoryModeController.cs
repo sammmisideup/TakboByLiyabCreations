@@ -26,11 +26,11 @@ public class StoryModeController : MonoBehaviour
     
     public void NanayLevel()
     {
-        
+        SceneManager.LoadScene("TereLevels");
     }
 
     public void TatayLevel()
     {
-        
+        SceneManager.LoadScene("BoyLevels");
     }
 }
