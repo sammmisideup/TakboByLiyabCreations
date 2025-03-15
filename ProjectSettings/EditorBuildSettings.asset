@@ -62,6 +62,72 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TobyScene/Toby10.unity
     guid: 9bbec426a626d6f4482e9af9e0265e88
+  - enabled: 1
+    path: Assets/Scenes/TereLevels.unity
+    guid: 8c43b2db279086b4b9a5be836ce9be67
+  - enabled: 1
+    path: Assets/Scenes/TereScene/Tere1.unity
+    guid: a1e8c46de3e6fbd408e6cb483e38ef1c
+  - enabled: 1
+    path: Assets/Scenes/TereScene/Tere2.unity
+    guid: 2252a88d3d821ac46a821454b841a7a1
+  - enabled: 1
+    path: Assets/Scenes/TereScene/Tere3.unity
+    guid: dd3a444b1ea7d9646be45b4195e64db2
+  - enabled: 1
+    path: Assets/Scenes/TereScene/Tere4.unity
+    guid: 27c1c5ce04864d04ab4f009a8524b34d
+  - enabled: 1
+    path: Assets/Scenes/TereScene/Tere5.unity
+    guid: d013f0ff7cff26948aa6079b20452a1b
+  - enabled: 1
+    path: Assets/Scenes/TereScene/Tere6.unity
+    guid: 57f12c624ff52b346bc02dd7bf5a42f9
+  - enabled: 1
+    path: Assets/Scenes/TereScene/Tere7.unity
+    guid: a9095a8b1a08aec489e83ba748c9f688
+  - enabled: 1
+    path: Assets/Scenes/TereScene/Tere8.unity
+    guid: efa3d08eebc100f43b52f2126899aeda
+  - enabled: 1
+    path: Assets/Scenes/TereScene/Tere9.unity
+    guid: 784239d9a769d6e4380e2ca3c9760ffb
+  - enabled: 1
+    path: Assets/Scenes/TereScene/Tere10.unity
+    guid: 35160288e8ff9404d9915264927a8cca
+  - enabled: 1
+    path: Assets/Scenes/BoyLevels.unity
+    guid: 597fabaddbd39a241a5bfaa21fd70398
+  - enabled: 1
+    path: Assets/Scenes/BoyScene/Boy1.unity
+    guid: 6205b966fbbdec049898e88536839d2f
+  - enabled: 1
+    path: Assets/Scenes/BoyScene/Boy2.unity
+    guid: 1bc1c962186b80e48b576f35d3caee7c
+  - enabled: 1
+    path: Assets/Scenes/BoyScene/Boy3.unity
+    guid: 58d0734ffc20cfe4aa20220be0945fb6
+  - enabled: 1
+    path: Assets/Scenes/BoyScene/Boy4.unity
+    guid: 0f3fc80f57dc62e4b9cb368f7df04b0a
+  - enabled: 1
+    path: Assets/Scenes/BoyScene/Boy5.unity
+    guid: 4c5f12d766438ea4c94b25fd0657112c
+  - enabled: 1
+    path: Assets/Scenes/BoyScene/Boy6.unity
+    guid: fad91bb9a158c29469c412b853f5a2d4
+  - enabled: 1
+    path: Assets/Scenes/BoyScene/Boy7.unity
+    guid: 5d1afd909ecf9e54499969d0a3d23020
+  - enabled: 1
+    path: Assets/Scenes/BoyScene/Boy8.unity
+    guid: b9b42225eb71bbb43b7d758d819f4fbc
+  - enabled: 1
+    path: Assets/Scenes/BoyScene/Boy9.unity
+    guid: 7a788b254681f764cade65a7f23db934
+  - enabled: 1
+    path: Assets/Scenes/BoyScene/Boy10.unity
+    guid: 85b66de74e267294eba05289c3075c88
   - enabled: 0
     path: Assets/Scenes/Endless/EndlessToby.unity
     guid: 297939354e67314439fe901b5e4d7aa8
@@ -80,6 +146,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TobyScene/WinningScene.unity
     guid: 4729b77adac668f48bd841cf698de560
+  - enabled: 1
+    path: Assets/Scenes/TereScene/TereWinning.unity
+    guid: 623f7022e95c91e48a68b69735a00a1a
+  - enabled: 1
+    path: Assets/Scenes/BoyScene/BoyWinning.unity
+    guid: de61322a8cfcf2c42a69bfc3ffbbbb25
   - enabled: 1
     path: Assets/Scenes/Endless Mode/EndlessTobyyy.unity
     guid: 711748492662d4e46b9792e87b019196

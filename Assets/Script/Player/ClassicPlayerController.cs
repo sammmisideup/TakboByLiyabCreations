@@ -29,8 +29,13 @@ public class ClassicPlayerController : MonoBehaviour
     [Header("Animation")]
     public Animator animator;
 
-    [Header("Animation")]
+    [Header("Audio")]
     AudioManager audioManager;
+
+    public int levelCurrent;
+    private int LevelStars;
+
+    public GameObject EndScene;
 
     private void Awake()
     {   
@@ -48,6 +53,8 @@ public class ClassicPlayerController : MonoBehaviour
         rb.useGravity = true;
         playerSpawner = transform.position;
         isSpawned = true;
+
+        levelCurrent = SceneManager.GetActiveScene().buildIndex;
 
         // Initialize health system
         health = 3;
@@ -137,6 +144,16 @@ public class ClassicPlayerController : MonoBehaviour
         
         SceneManager.LoadScene("WinningScene");  // Load the Winning Scene
     }
+    public void TereWinner()
+    {
+        
+        SceneManager.LoadScene("TereWinning");  // Load the Winning Scene
+    }
+    public void BoyWinner()
+    {
+        
+        SceneManager.LoadScene("BoyWinning");  // Load the Winning Scene
+    }
 
     private void OnTriggerEnter(Collider col)
     {
@@ -187,11 +204,41 @@ public class ClassicPlayerController : MonoBehaviour
             Debug.Log("SafeZone Reached! Collecting Third Star...");
             animator.SetTrigger("win");
             ClassicMapForce.instance.classicMapSpeed = 0;
-            Invoke("Winner", 5f);  // Trigger the Winner logic when reaching SafeZone
+            if(SceneManager.GetActiveScene().buildIndex < 18){
+                Invoke("Winner", 5f);  // Trigger the Winner logic when reaching SafeZone
+            }else if(SceneManager.GetActiveScene().buildIndex == 18)
+            {
+                Invoke("EndCutSCene", 5f);
+                Invoke("TereWinner", 13f);
+            }else if(SceneManager.GetActiveScene().buildIndex > 18)
+            {
+                Invoke("TereWinner", 5f);
+            }else if(SceneManager.GetActiveScene().buildIndex < 29)
+            {
+                Invoke("TereWinner", 5f);
+                
+            }else if(SceneManager.GetActiveScene().buildIndex == 29)
+            {
+                Invoke("EndCutSCene", 5f);
+                Invoke("BoyWinner", 13f);
+            }else if(SceneManager.GetActiveScene().buildIndex > 29)
+            {
+                Invoke("BoyWinner", 5f);
+                
+            }else if(SceneManager.GetActiveScene().buildIndex == 40)
+            {
+                Invoke("EndCutSCene", 5f);
+                //Invoke("BoyWinner", 13f);
+            }
+            
+            
 
             starManager.CollectStar();  // Award the third star
             PlayerPrefs.SetInt("TotalStars", starManager.totalStars);  // Save the star count
-            starValue = PlayerPrefs.GetInt("FinalStar") + starManager.totalStars;
+            
+            PlayerPrefs.SetInt("Level" + levelCurrent + "TotalStars", starManager.totalStars);
+            LevelStars = PlayerPrefs.GetInt("Level" + levelCurrent + "TotalStars", 0); 
+            starValue = PlayerPrefs.GetInt("FinalStar") + LevelStars;
             PlayerPrefs.SetInt("FinalStar", starValue);
         }
     }
@@ -282,4 +329,10 @@ public class ClassicPlayerController : MonoBehaviour
         }
         
     }
+
+    public void EndCutSCene()
+    {
+        EndScene.SetActive(true);
+    }
+    
 }
