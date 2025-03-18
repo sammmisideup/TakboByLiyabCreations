@@ -447,3 +447,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826488361961e5a47b66becfa135db5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: StartSplash

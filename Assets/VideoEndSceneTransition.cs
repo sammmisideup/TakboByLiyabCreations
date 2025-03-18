@@ -6,25 +6,41 @@ public class VideoEndSceneTransition : MonoBehaviour
 {
     private VideoPlayer videoPlayer;
 
+    [SerializeField] private string nextScene; // Scene name holder in the Inspector
+
     void Start()
     {
-        // Get the Video Player component
         videoPlayer = GetComponent<VideoPlayer>();
 
-        // Subscribe to the video end event
+        if (videoPlayer == null)
+        {
+            Debug.LogError("VideoPlayer component missing from GameObject!");
+            return;
+        }
+
         videoPlayer.loopPointReached += OnVideoEnd;
+
+        // Optional: Start video if not playing
+        if (!videoPlayer.isPlaying)
+        {
+            videoPlayer.Play();
+        }
     }
 
-    // This method will be called when the video ends
     void OnVideoEnd(VideoPlayer vp)
     {
-        // Load the next scene
-       SceneManager.LoadScene("StartSplash");
+        if (!string.IsNullOrEmpty(nextScene))
+        {
+            SceneManager.LoadScene(nextScene);
+        }
+        else
+        {
+            Debug.LogError("Next scene name is not set in the Inspector!");
+        }
     }
 
     void OnDestroy()
     {
-        // Unsubscribe to avoid memory leaks
         if (videoPlayer != null)
         {
             videoPlayer.loopPointReached -= OnVideoEnd;
