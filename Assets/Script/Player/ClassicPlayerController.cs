@@ -109,7 +109,18 @@ public class ClassicPlayerController : MonoBehaviour
                 isGrounded = false;
                 jumpRequest = false;
                 isSpawned = false;
-                Invoke("GameOverNa", 3f);
+                if(SceneManager.GetActiveScene().buildIndex <= 20)
+                {
+                    Invoke("GameOverNaToby", 3f);
+                }else if(SceneManager.GetActiveScene().buildIndex >= 21 && SceneManager.GetActiveScene().buildIndex <= 30)
+                {
+                    Invoke("GameOverNaTere", 3f);
+                }
+                else if(SceneManager.GetActiveScene().buildIndex >= 31 && SceneManager.GetActiveScene().buildIndex <= 40)
+                {
+                    Invoke("GameOverNaBoy", 3f);
+                }
+                
                 break;
         }
     }
@@ -128,15 +139,43 @@ public class ClassicPlayerController : MonoBehaviour
         }
     }
 
+    public void JumpButton()
+    {
+        if (isGrounded)
+        {
+            jumpRequest = true; // Set jump request flag
+            animator.SetTrigger("jump");
+            
+        }
+    }
+
+    public void GrabButton()
+    {
+        if (isGrab)  // Press G to collect item
+            {
+                grabRequest = true;
+                animator.SetTrigger("grab");
+                audioManager.PlaySFX(audioManager.grab);
+            }
+    }
+
     private void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z); // Reset vertical velocity
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
-    public void GameOverNa()
+    public void GameOverNaToby()
     {
         SceneManager.LoadScene("TobbyGameOver");
+    }
+    public void GameOverNaTere()
+    {
+        SceneManager.LoadScene("TereGameOver");
+    }
+    public void GameOverNaBoy()
+    {
+        SceneManager.LoadScene("BoyGameOver");
     }
 
     public void Winner()
@@ -204,38 +243,33 @@ public class ClassicPlayerController : MonoBehaviour
             Debug.Log("SafeZone Reached! Collecting Third Star...");
             animator.SetTrigger("win");
             ClassicMapForce.instance.classicMapSpeed = 0;
-            if(SceneManager.GetActiveScene().buildIndex < 18){
+            if(SceneManager.GetActiveScene().buildIndex <= 19){
                 Invoke("Winner", 5f);  // Trigger the Winner logic when reaching SafeZone
-            }else if(SceneManager.GetActiveScene().buildIndex == 18)
+            }else if(SceneManager.GetActiveScene().buildIndex == 20)
             {
                 Invoke("EndCutSCene", 5f);
                 Invoke("TereWinner", 13f);
-            }else if(SceneManager.GetActiveScene().buildIndex > 18)
+            }else if(SceneManager.GetActiveScene().buildIndex >= 21 && SceneManager.GetActiveScene().buildIndex <= 29)
             {
                 Invoke("TereWinner", 5f);
-            }else if(SceneManager.GetActiveScene().buildIndex < 29)
-            {
-                Invoke("TereWinner", 5f);
-                
-            }else if(SceneManager.GetActiveScene().buildIndex == 29)
+            }else if(SceneManager.GetActiveScene().buildIndex == 30)
             {
                 Invoke("EndCutSCene", 5f);
-                Invoke("BoyWinner", 13f);
-            }else if(SceneManager.GetActiveScene().buildIndex > 29)
+                Invoke("BoyWinner", 20f);
+            }else if(SceneManager.GetActiveScene().buildIndex >= 31 && SceneManager.GetActiveScene().buildIndex <= 39)
             {
                 Invoke("BoyWinner", 5f);
                 
             }else if(SceneManager.GetActiveScene().buildIndex == 40)
             {
                 Invoke("EndCutSCene", 5f);
-                //Invoke("BoyWinner", 13f);
+                Invoke("BoyWinner", 30f);
             }
             
             
 
             starManager.CollectStar();  // Award the third star
             PlayerPrefs.SetInt("TotalStars", starManager.totalStars);  // Save the star count
-            
             PlayerPrefs.SetInt("Level" + levelCurrent + "TotalStars", starManager.totalStars);
             LevelStars = PlayerPrefs.GetInt("Level" + levelCurrent + "TotalStars", 0); 
             starValue = PlayerPrefs.GetInt("FinalStar") + LevelStars;

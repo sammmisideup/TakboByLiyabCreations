@@ -12,11 +12,11 @@ public class TobyLockLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sceneLock = PlayerPrefs.GetInt("sceneLock", 9);
+        sceneLock = PlayerPrefs.GetInt("sceneLock", 11);
 
         for (i = 0; i < levelButtons.Length; i++)
         {
-            if(i + 9 > sceneLock)
+            if(i + 11 > sceneLock)
             levelButtons[i].SetActive(true);
         }
     }

@@ -12,11 +12,11 @@ public class TereLockLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tereSceneLock = PlayerPrefs.GetInt("sceneLock", 20);
+        tereSceneLock = PlayerPrefs.GetInt("sceneLock", 21);
 
         for (i = 0; i < levelButtons.Length; i++)
         {
-            if(i + 20 > tereSceneLock)
+            if(i + 21 > tereSceneLock)
             levelButtons[i].SetActive(true);
         }
     }

@@ -30,11 +30,14 @@ EditorBuildSettings:
     path: Assets/Scenes/StoryMode.unity
     guid: ed2a6041eaca16941acbbce99a020034
   - enabled: 1
-    path: Assets/Scenes/EndlessCharacterSelection.unity
-    guid: cc2e612ecdf62ae43ba6c817c7580820
-  - enabled: 1
     path: Assets/Scenes/TobyLevels.unity
     guid: 53e0135e78d47f44a9306e8633e3a0e5
+  - enabled: 1
+    path: Assets/Scenes/TereLevels.unity
+    guid: 2582a529e5638db4896a1c11f93ae882
+  - enabled: 1
+    path: Assets/Scenes/BoyLevels.unity
+    guid: b7e32c4fd9765ec4bbf81b20b29664c7
   - enabled: 1
     path: Assets/Scenes/TobyScene/Toby1.unity
     guid: 12ae87414d0e92c428af988eb5e56b7e
@@ -66,9 +69,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TobyScene/Toby10.unity
     guid: 9bbec426a626d6f4482e9af9e0265e88
   - enabled: 1
-    path: Assets/Scenes/TereLevels.unity
-    guid: 8c43b2db279086b4b9a5be836ce9be67
-  - enabled: 1
     path: Assets/Scenes/TereScene/Tere1.unity
     guid: a1e8c46de3e6fbd408e6cb483e38ef1c
   - enabled: 1
@@ -98,9 +98,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TereScene/Tere10.unity
     guid: 35160288e8ff9404d9915264927a8cca
-  - enabled: 1
-    path: Assets/Scenes/BoyLevels.unity
-    guid: 597fabaddbd39a241a5bfaa21fd70398
   - enabled: 1
     path: Assets/Scenes/BoyScene/Boy1.unity
     guid: 6205b966fbbdec049898e88536839d2f
@@ -135,11 +132,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Endless/EndlessToby.unity
     guid: 297939354e67314439fe901b5e4d7aa8
   - enabled: 1
+    path: Assets/Scenes/EndlessCharacterSelection.unity
+    guid: cc2e612ecdf62ae43ba6c817c7580820
+  - enabled: 1
     path: Assets/Scenes/Endless Mode/GameOverTobbyEndless.unity
     guid: 48b16583d19738b4b8d00b4192180104
   - enabled: 1
     path: Assets/Scenes/TobyScene/TobbyGameOver.unity
     guid: ae46f24395910a944a6600147bde124d
+  - enabled: 1
+    path: Assets/Scenes/TereScene/TereGameOver.unity
+    guid: 94cafd397f14e5b43a64fccd0912c1aa
+  - enabled: 1
+    path: Assets/Scenes/BoyScene/BoyGameOver.unity
+    guid: f78b4c6381527ed4383f815c63df82d9
   - enabled: 1
     path: Assets/Scenes/SettingsScreen.unity
     guid: 393e1da4361201242b68f7924c54f10e

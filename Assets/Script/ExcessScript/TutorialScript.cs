@@ -34,6 +34,29 @@ public class TutorialScript : MonoBehaviour
         
     }
 
+    public void JumpButton()
+    {
+        if (isJump)
+        {
+            tobyAnimator.SetBool("idle", false);
+            tutorialJump.SetActive(false);
+            ClassicMapForce.instance.classicMapSpeed = 40f;
+            isJump = false;
+            
+        }
+    }
+
+    public void GrabButton()
+    {
+        if (isGrab)  // Press G to collect item
+        {
+            tobyAnimator.SetBool("idle", false);
+            tutorialGrab.SetActive(false);
+            ClassicMapForce.instance.classicMapSpeed = 40f;
+            isGrab = false;
+        }
+    }
+
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "TutorialJump")

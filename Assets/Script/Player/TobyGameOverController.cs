@@ -18,9 +18,19 @@ public class TobyGameOverController : MonoBehaviour
     {
         
     }
-    public void TryAgain()
+    public void TobyLevel()
     {
         SceneManager.LoadScene("TobyLevels");
+    }
+    
+    public void NanayLevel()
+    {
+        SceneManager.LoadScene("TereLevels");
+    }
+
+    public void TatayLevel()
+    {
+        SceneManager.LoadScene("BoyLevels");
     }
     public void Back()
     {
