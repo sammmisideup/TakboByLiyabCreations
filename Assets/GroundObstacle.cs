@@ -23,7 +23,7 @@ public class GroundObstacle : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Triggered by: " + other.gameObject.name);
-        if (other.CompareTag("Kidlat") && !isWarningActive)
+        if (other.CompareTag("FlyingObstacle") && !isWarningActive)
         {
             StartCoroutine(BlinkWarning());
         }

@@ -23,7 +23,7 @@ public class PlayerWarning : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Triggered by: " + other.gameObject.name);
-        if ((other.CompareTag("MovingObstacle") || other.CompareTag("FlyingObstacle")) && !isWarningActive)
+        if (other.CompareTag("MovingObstacle") && !isWarningActive)
         {
             StartCoroutine(BlinkWarning());
         }
