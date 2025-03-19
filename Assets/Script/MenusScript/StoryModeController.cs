@@ -21,17 +21,19 @@ public class StoryModeController : MonoBehaviour
 
     public void unlockTereMap()
     {
-        if(starValueMap >= 20)
+        if(starValueMap >= 25)
         {
             Lock1.SetActive(false);
+            PlayerPrefs.SetInt("sceneLock", 21);
         }
         
     }
     public void unlockBoyMap()
     {
-        if(starValueMap >= 45)
+        if(starValueMap >= 50)
         {
             Lock2.SetActive(false);
+            PlayerPrefs.SetInt("sceneLock", 31);
         }
     }
     
