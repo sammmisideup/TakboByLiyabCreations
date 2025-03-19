@@ -15,25 +15,23 @@ public class StoryModeController : MonoBehaviour
     {
         
         starValueMap = PlayerPrefs.GetInt("FinalStar");
-        
+        unlockTereMap();
+        unlockBoyMap();
     }
 
     public void unlockTereMap()
     {
-        if(starValueMap >= 3)
+        if(starValueMap >= 20)
         {
             Lock1.SetActive(false);
-            starValueMap -= 3;
-            PlayerPrefs.SetInt("FinalStar", starValueMap);
         }
         
     }
     public void unlockBoyMap()
     {
-        if(starValueMap >= 25)
+        if(starValueMap >= 45)
         {
             Lock2.SetActive(false);
-            starValueMap -= 25;
         }
     }
     

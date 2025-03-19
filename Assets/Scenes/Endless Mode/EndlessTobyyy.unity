@@ -29157,7 +29157,7 @@ PrefabInstance:
       objectReference: {fileID: 111134063}
     - target: {fileID: 3972399504200820056, guid: 9d925f4da87efed439b1ac54821dbb51, type: 3}
       propertyPath: maxTime
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3972399504200820056, guid: 9d925f4da87efed439b1ac54821dbb51, type: 3}
       propertyPath: scoreText
@@ -29169,11 +29169,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3972399504200820056, guid: 9d925f4da87efed439b1ac54821dbb51, type: 3}
       propertyPath: addedEnergy
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3972399504200820056, guid: 9d925f4da87efed439b1ac54821dbb51, type: 3}
       propertyPath: minusEnergy
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3972399504200820056, guid: 9d925f4da87efed439b1ac54821dbb51, type: 3}
       propertyPath: endlessForce

@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &4974943 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7640034103347679555, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}
-  m_PrefabInstance: {fileID: 7406085304644633911}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &48643851
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,12 +210,16 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
+  starValue: 0
   animator: {fileID: 0}
+  levelCurrent: 0
+  EndScene: {fileID: 0}
 --- !u!199 &48643856
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5253,6 +5252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs: []
   spawnPoints: {fileID: 436897087}
+  warningSign: {fileID: 0}
 --- !u!65 &56835070
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5964,12 +5964,16 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
+  starValue: 0
   animator: {fileID: 0}
+  levelCurrent: 0
+  EndScene: {fileID: 0}
 --- !u!23 &301821375
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6834,6 +6838,7 @@ RectTransform:
   - {fileID: 1864451752}
   - {fileID: 830338160}
   - {fileID: 72897942}
+  - {fileID: 981259668}
   m_Father: {fileID: 111568092}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11775,12 +11780,16 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
   starManager: {fileID: 0}
   collectibleManager: {fileID: 0}
+  starValue: 0
   animator: {fileID: 0}
+  levelCurrent: 0
+  EndScene: {fileID: 0}
 --- !u!136 &682420298
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12318,11 +12327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 8811141b3f95196478346f7056943d61, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!114 &770198706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12335,54 +12339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 770198704}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 0
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
 --- !u!1 &830338159
 GameObject:
   m_ObjectHideFlags: 0
@@ -12948,7 +12904,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4280361249
-  m_fontColor: {r: 0.12941177, g: 0.12941177, b: 0.12941177, a: 1}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -13197,6 +13153,104 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &981259667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 981259668}
+  - component: {fileID: 981259671}
+  - component: {fileID: 981259670}
+  - component: {fileID: 981259669}
+  m_Layer: 5
+  m_Name: dionela
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &981259668
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981259667}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 681749945}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -6255.3896, y: -117.47999}
+  m_SizeDelta: {x: 646.683, y: 351.01}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &981259669
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981259667}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4e19c872e2264ba4c8515f595e683d27, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &981259670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981259667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e9a13ab61fb1cef45add3d8ba97dff44, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &981259671
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981259667}
+  m_CullTransparentMesh: 1
 --- !u!1 &1017532923
 GameObject:
   m_ObjectHideFlags: 0
@@ -13433,8 +13487,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280558628
-  m_fontColor: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -18602,12 +18656,16 @@ MonoBehaviour:
   isGrab: 0
   grabRequest: 0
   playerSpawner: {x: 0, y: 0, z: 0}
+  isSpawned: 0
   heart1: {fileID: 242043895}
   heart2: {fileID: 1581924534}
   heart3: {fileID: 949537707}
   starManager: {fileID: 1239431879}
   collectibleManager: {fileID: 573900504}
+  starValue: 0
   animator: {fileID: 0}
+  levelCurrent: 0
+  EndScene: {fileID: 0}
 --- !u!54 &1187800124
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19155,6 +19213,7 @@ MonoBehaviour:
   imageColor: {fileID: 925553675}
   color1: {r: 1, g: 1, b: 1, a: 0}
   color2: {r: 0, g: 0, b: 0, a: 1}
+  speedChange: 0
   isChangeColor: 0
 --- !u!65 &1346928523
 BoxCollider:
@@ -19956,10 +20015,8 @@ MonoBehaviour:
   countDownHolder: {fileID: 1610380166}
   countDownMessage: {fileID: 936440169}
   countDownNum: {fileID: 1102764737}
-  playerToby: {fileID: 4974943}
-  playerNanay: {fileID: 1111901076863513207}
-  animatorToby: {fileID: 5866666020398208180}
-  animatorNanay: {fileID: 1111901076863513208}
+  player: {fileID: 1111901076863513207}
+  animator: {fileID: 1111901076863513208}
 --- !u!1 &1701831707
 GameObject:
   m_ObjectHideFlags: 0
@@ -19999,6 +20056,7 @@ MonoBehaviour:
   grab: {fileID: 8300000, guid: 34054c7794bcaff429323c5c4327c86a, type: 3}
   star: {fileID: 8300000, guid: 9b42c75016a693c45abe1a7df39b5b05, type: 3}
   recoil: {fileID: 8300000, guid: b463aa7db8dd4d744bb769dbedf4ac9b, type: 3}
+  thunder: {fileID: 0}
 --- !u!4 &1701831709
 Transform:
   m_ObjectHideFlags: 0
@@ -25942,11 +26000,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 36452278763580016, guid: 8b5bdf78ac5652b458e757a2e7cc02cf, type: 3}
   m_PrefabInstance: {fileID: 3484775441606913036}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &5866666020398208180 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4011905663044489603, guid: bb570a641a665b84ab578d9b9f6ece8d, type: 3}
-  m_PrefabInstance: {fileID: 7406085304644633911}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7169201882607709595
 PrefabInstance:
