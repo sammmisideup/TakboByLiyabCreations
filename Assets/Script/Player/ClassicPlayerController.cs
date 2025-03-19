@@ -78,7 +78,6 @@ public class ClassicPlayerController : MonoBehaviour
                 animator.SetTrigger("grab");
                 audioManager.PlaySFX(audioManager.grab);
             }
-
         
         
         // Player Health System
@@ -271,7 +270,25 @@ public class ClassicPlayerController : MonoBehaviour
             starManager.CollectStar();  // Award the third star
             PlayerPrefs.SetInt("TotalStars", starManager.totalStars);  // Save the star count
             PlayerPrefs.SetInt("Level" + levelCurrent + "TotalStars", starManager.totalStars);
-            LevelStars = PlayerPrefs.GetInt("Level" + levelCurrent + "TotalStars", 0); 
+            if(starManager.totalStars > PlayerPrefs.GetInt("Level" + levelCurrent + "finalLevelStar") && PlayerPrefs.GetInt("Level" + levelCurrent + "finalLevelStar") == 0)
+            {
+                PlayerPrefs.SetInt("Level" + levelCurrent + "finalLevelStar", starManager.totalStars);
+            }
+            else if(starManager.totalStars > PlayerPrefs.GetInt("Level" + levelCurrent + "finalLevelStar") && PlayerPrefs.GetInt("Level" + levelCurrent + "finalLevelStar") == 2)
+            {
+                PlayerPrefs.SetInt("Level" + levelCurrent + "finalLevelStar", starManager.totalStars - 2);
+            }else if(starManager.totalStars > PlayerPrefs.GetInt("Level" + levelCurrent + "finalLevelStar") && starManager.totalStars == 3 && PlayerPrefs.GetInt("Level" + levelCurrent + "finalLevelStar") == 1)
+            {
+                PlayerPrefs.SetInt("Level" + levelCurrent + "finalLevelStar", starManager.totalStars - 1);
+            }else if(starManager.totalStars > PlayerPrefs.GetInt("Level" + levelCurrent + "finalLevelStar") && starManager.totalStars == 2 && PlayerPrefs.GetInt("Level" + levelCurrent + "finalLevelStar") == 1)
+            {
+                PlayerPrefs.SetInt("Level" + levelCurrent + "finalLevelStar", starManager.totalStars - 1);
+            }
+            else{
+                return;
+            }
+
+            LevelStars = PlayerPrefs.GetInt("Level" + levelCurrent + "finalLevelStar", 0); 
             starValue = PlayerPrefs.GetInt("FinalStar") + LevelStars;
             PlayerPrefs.SetInt("FinalStar", starValue);
         }

@@ -51,5 +51,10 @@ public class ShowLevelStar : MonoBehaviour
             PlayerPrefs.DeleteKey("Level" + CurrentLevel + "TotalStars");
             Debug.Log("Delete Prefs");
         }
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            PlayerPrefs.DeleteAll();
+            Debug.Log("Delete All Prefs");
+        }
     }
 }

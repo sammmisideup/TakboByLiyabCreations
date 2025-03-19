@@ -19,6 +19,7 @@ public class ShowTotalStar : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R))
         {
             PlayerPrefs.DeleteKey("FinalStar");
+            
             Debug.Log("Delete Prefs");
         }
     }
