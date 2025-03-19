@@ -124,6 +124,26 @@ public class EndlessPlayerController : MonoBehaviour
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
 
+    public void JumpButton()
+    {
+        if (isGrounded)
+        {
+            jumpRequest = true; // Set jump request flag
+            tobyAnimator.SetTrigger("jump");
+            
+        }
+    }
+
+    public void GrabButton()
+    {
+        if (isGrab)  // Press G to collect item
+            {
+                grabRequest = true;
+                tobyAnimator.SetTrigger("grab");
+                
+            }
+    }
+
     public void GameOverNa()
     {
         PlayerPrefs.SetInt("playerfinalscore", (int)scoreValue);

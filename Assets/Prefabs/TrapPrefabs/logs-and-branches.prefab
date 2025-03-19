@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7870544031535666020}
   - component: {fileID: 5394535347546875822}
   - component: {fileID: -5577167268524721870}
-  - component: {fileID: 6873659334370914968}
   m_Layer: 0
   m_Name: logs-and-branches
   m_TagString: Obstacle
@@ -104,16 +103,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 215a826cd0b38cd4ca4a166407d51bb5, type: 3}
---- !u!114 &6873659334370914968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5899083434814228091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a6ac336150095b46b346b18ef250800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smokeParticle: {fileID: 0}

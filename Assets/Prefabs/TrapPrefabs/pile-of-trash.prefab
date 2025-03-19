@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4492099134630898188}
   - component: {fileID: 1852055959826030278}
   - component: {fileID: -5912362835294587340}
-  - component: {fileID: 8643672006370209012}
   m_Layer: 0
   m_Name: pile-of-trash
   m_TagString: Obstacle
@@ -102,16 +101,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 9ee9b9a7a65793a4593c5f6bd90909bb, type: 3}
---- !u!114 &8643672006370209012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194551319799594771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a6ac336150095b46b346b18ef250800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smokeParticle: {fileID: 0}

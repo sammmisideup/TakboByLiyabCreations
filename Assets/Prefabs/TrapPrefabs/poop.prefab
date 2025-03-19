@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4816730549747047693}
   - component: {fileID: 7294848037243922887}
   - component: {fileID: -7169929505282807525}
-  - component: {fileID: -7839773867107768124}
   - component: {fileID: -1825040913868522986}
   m_Layer: 0
   m_Name: poop
@@ -100,19 +99,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: e873603aeef51384e8ac6fa9986922b5, type: 3}
---- !u!114 &-7839773867107768124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9096283696478980114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a6ac336150095b46b346b18ef250800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smokeParticle: {fileID: 0}
 --- !u!54 &-1825040913868522986
 Rigidbody:
   m_ObjectHideFlags: 0

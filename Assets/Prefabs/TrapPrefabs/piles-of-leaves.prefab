@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2814541816131716962}
   - component: {fileID: 66346280981590952}
   - component: {fileID: -2439302197769523199}
-  - component: {fileID: 545589044100803451}
   m_Layer: 0
   m_Name: piles-of-leaves
   m_TagString: Obstacle
@@ -99,16 +98,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: d71e2e6ba15c16b43a8f25654949577c, type: 3}
---- !u!114 &545589044100803451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011782917062972029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a6ac336150095b46b346b18ef250800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smokeParticle: {fileID: 0}

@@ -342,7 +342,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7517134864836969295}
   - component: {fileID: 6768615635887626616}
-  - component: {fileID: -8676597645446946613}
   - component: {fileID: 5410091279161366016}
   - component: {fileID: 322240712876784075}
   - component: {fileID: 8939710397950007223}
@@ -388,19 +387,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &-8676597645446946613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7140997041924053493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a6ac336150095b46b346b18ef250800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smokeParticle: {fileID: 8336304168837348438, guid: dbfbc174b8d403f4d9611c01bdd5601d, type: 3}
 --- !u!114 &5410091279161366016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,6 +442,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603ea91e00397b94ab5329a97e407d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destructionEffect: {fileID: 0}
+  particleLifetime: 3
 --- !u!1 &7229650298836391616
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4066950346896758118}
   - component: {fileID: 2275516842472513964}
   - component: {fileID: -446043239262064294}
-  - component: {fileID: 196480107812196531}
   m_Layer: 0
   m_Name: manhole
   m_TagString: Obstacle
@@ -100,16 +99,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: cb3c7614aca4e85488a9e841a7907454, type: 3}
---- !u!114 &196480107812196531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330098624217317497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a6ac336150095b46b346b18ef250800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smokeParticle: {fileID: 0}

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3077703128459029595}
   - component: {fileID: 960047346873817233}
   - component: {fileID: 3110854524173262344}
-  - component: {fileID: 3006268253930214829}
   - component: {fileID: -7858888137421129643}
   m_Layer: 0
   m_Name: barricade
@@ -100,19 +99,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 607b2f5cfaa83434b9d3fb55a02ee502, type: 3}
---- !u!114 &3006268253930214829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608411279701571908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a6ac336150095b46b346b18ef250800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smokeParticle: {fileID: 0}
 --- !u!54 &-7858888137421129643
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5911859022049956681}
   - component: {fileID: 8498243279230936963}
   - component: {fileID: 428679502357428024}
-  - component: {fileID: 8571043719796679155}
   m_Layer: 0
   m_Name: giulonh
   m_TagString: Obstacle
@@ -99,16 +98,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: fa9e2306d9ee8cf42ab4423687979733, type: 3}
---- !u!114 &8571043719796679155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7993659869616309846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a6ac336150095b46b346b18ef250800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smokeParticle: {fileID: 0}

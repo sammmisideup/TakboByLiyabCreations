@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4129195650279238609}
   - component: {fileID: 2209348601424617243}
   - component: {fileID: -5869367156675866946}
-  - component: {fileID: -9053347064497516444}
   m_Layer: 0
   m_Name: poster_ng_kuryente
   m_TagString: Obstacle
@@ -106,16 +105,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 0c1cae83bde221d4897de2f6d24e0214, type: 3}
---- !u!114 &-9053347064497516444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408088863911984846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a6ac336150095b46b346b18ef250800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smokeParticle: {fileID: 0}
