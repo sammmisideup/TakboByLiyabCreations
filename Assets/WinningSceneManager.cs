@@ -64,4 +64,8 @@ public class WinningSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void ForAds2()
+    {
+        SceneManager.LoadScene("ForAds2");
+    }
 }
