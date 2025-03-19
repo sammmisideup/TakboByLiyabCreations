@@ -10791,7 +10791,6 @@ GameObject:
   - component: {fileID: 441270864}
   - component: {fileID: 441270863}
   - component: {fileID: 441270862}
-  - component: {fileID: 441270865}
   m_Layer: 0
   m_Name: Spawnpoint
   m_TagString: Untagged
@@ -10832,7 +10831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warningIcon: {fileID: 1153763567}
   audioSource: {fileID: 1383848392}
-  warningSound: {fileID: 8300000, guid: 08e01932a6fae3d4db5e83527df39eae, type: 3}
+  warningSound: {fileID: 8300000, guid: 70e1c408201450e4a9688d81dad4f0ee, type: 3}
   warningDuration: 3
   blinkInterval: 0.5
 --- !u!65 &441270863
@@ -10862,24 +10861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warningIcon: {fileID: 1295611240}
   audioSource: {fileID: 1383848392}
-  warningSound: {fileID: 8300000, guid: 08e01932a6fae3d4db5e83527df39eae, type: 3}
-  warningDuration: 3
-  blinkInterval: 0.5
---- !u!114 &441270865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441270860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2451aa88a000a184b88765a1fdb2c0d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  warningIcon: {fileID: 1235827890}
-  audioSource: {fileID: 0}
-  warningSound: {fileID: 0}
+  warningSound: {fileID: 8300000, guid: 70e1c408201450e4a9688d81dad4f0ee, type: 3}
   warningDuration: 3
   blinkInterval: 0.5
 --- !u!1 &463417931
@@ -11041,9 +11023,9 @@ MonoBehaviour:
   playerSpawner: {x: 0, y: 0, z: 0}
   timerStamina: {fileID: 1634213150}
   timeRemaining: 0
-  maxTime: 100
-  addedEnergy: 40
-  minusEnergy: 50
+  maxTime: 40
+  addedEnergy: 20
+  minusEnergy: 30
   ItemsSmokeParticle: {fileID: 959720229}
   gradient:
     serializedVersion: 2
@@ -27580,10 +27562,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 08e01932a6fae3d4db5e83527df39eae, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70e1c408201450e4a9688d81dad4f0ee, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.501
-  m_Pitch: 2.98
+  m_Volume: 0.216
+  m_Pitch: -0.27
   Loop: 0
   Mute: 0
   Spatialize: 0
