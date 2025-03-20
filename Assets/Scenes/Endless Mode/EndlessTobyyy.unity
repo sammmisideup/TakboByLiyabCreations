@@ -17585,6 +17585,7 @@ MonoBehaviour:
   level2Prefabs:
   - {fileID: 2805249895169364839, guid: dcc6dba30a4b4744686ec631785eb802, type: 3}
   - {fileID: 2805249895169364839, guid: 48717b62e3ca4ff4b8a575ad51355134, type: 3}
+  - {fileID: 2805249895169364839, guid: 8cb57b7a135acb744a8d73bf76056b9b, type: 3}
   level3Prefabs:
   - {fileID: 2805249895169364839, guid: 7f49c3cf8ab86c649b01a44e41c230ae, type: 3}
   - {fileID: 2805249895169364839, guid: 5702e9a18f67f7f42a97182cfbf912af, type: 3}
@@ -30411,7 +30412,7 @@ PrefabInstance:
       objectReference: {fileID: 111134063}
     - target: {fileID: 3972399504200820056, guid: 9d925f4da87efed439b1ac54821dbb51, type: 3}
       propertyPath: maxTime
-      value: 40
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3972399504200820056, guid: 9d925f4da87efed439b1ac54821dbb51, type: 3}
       propertyPath: scoreText
@@ -30423,11 +30424,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3972399504200820056, guid: 9d925f4da87efed439b1ac54821dbb51, type: 3}
       propertyPath: addedEnergy
-      value: 20
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3972399504200820056, guid: 9d925f4da87efed439b1ac54821dbb51, type: 3}
       propertyPath: minusEnergy
-      value: 30
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3972399504200820056, guid: 9d925f4da87efed439b1ac54821dbb51, type: 3}
       propertyPath: endlessForce

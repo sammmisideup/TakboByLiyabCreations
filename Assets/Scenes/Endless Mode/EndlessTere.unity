@@ -28280,9 +28280,9 @@ MonoBehaviour:
   playerSpawner: {x: 0, y: 0, z: 0}
   timerStamina: {fileID: 405840199}
   timeRemaining: 0
-  maxTime: 40
-  addedEnergy: 20
-  minusEnergy: 30
+  maxTime: 15
+  addedEnergy: 6
+  minusEnergy: 7
   ItemsSmokeParticle: {fileID: 1105685970}
   gradient:
     serializedVersion: 2
