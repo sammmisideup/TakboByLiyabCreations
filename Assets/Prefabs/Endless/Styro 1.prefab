@@ -265,7 +265,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5916784785945100242, guid: 106ad0869d2a66b47bb928c9751c0a06, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.5
+      value: 17.8
       objectReference: {fileID: 0}
     - target: {fileID: 5916784785945100242, guid: 106ad0869d2a66b47bb928c9751c0a06, type: 3}
       propertyPath: m_LocalPosition.z
@@ -600,11 +600,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30a0fe9f7b678ab4e826112b357e9db3, type: 3}
---- !u!198 &1071388536191130503 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3622425199003990681, guid: 30a0fe9f7b678ab4e826112b357e9db3, type: 3}
-  m_PrefabInstance: {fileID: 4367126821692989726}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2414720575289213664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2096963447075349502, guid: 30a0fe9f7b678ab4e826112b357e9db3, type: 3}
@@ -827,7 +822,7 @@ PrefabInstance:
     - target: {fileID: 4071967433988153528, guid: f7742aad6dccb304b92a007da24eabbf, type: 3}
       propertyPath: smokeParticle
       value: 
-      objectReference: {fileID: 1071388536191130503}
+      objectReference: {fileID: 0}
     - target: {fileID: 4180230188676557084, guid: f7742aad6dccb304b92a007da24eabbf, type: 3}
       propertyPath: m_RootOrder
       value: 3

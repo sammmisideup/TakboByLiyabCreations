@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/SettingsScreen.unity
+    guid: 393e1da4361201242b68f7924c54f10e
   - enabled: 0
     path: Assets/Scenes/CreditsScreen.unity
     guid: 4a18bd842618f2b4e95a9ddc9b5284d6
@@ -146,9 +149,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BoyScene/BoyGameOver.unity
     guid: f78b4c6381527ed4383f815c63df82d9
-  - enabled: 1
-    path: Assets/Scenes/SettingsScreen.unity
-    guid: 393e1da4361201242b68f7924c54f10e
   - enabled: 0
     path: Assets/Scenes/Endless/TobyEndless.unity
     guid: a27cede138ad40d4bb5d854caf6d5de4

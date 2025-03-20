@@ -86,6 +86,7 @@ public class EndlessPlayerController : MonoBehaviour
         {
             tobyAnimator.SetTrigger("dead");
             isGrounded = false;
+            timerStamina.fillAmount = 0;
 
             if (PlatformSpawner.instance != null)
                 PlatformSpawner.instance.enabled = false;

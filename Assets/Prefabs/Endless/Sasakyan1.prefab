@@ -211,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8501467447536789555, guid: 54bdcc3b7fc55b945a386cc2dc991a06, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7
+      value: 11.9
       objectReference: {fileID: 0}
     - target: {fileID: 8501467447536789555, guid: 54bdcc3b7fc55b945a386cc2dc991a06, type: 3}
       propertyPath: m_LocalPosition.z
@@ -352,11 +352,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0ccd45925cf23b4b9bf3a93f81bcda2, type: 3}
---- !u!1 &5334732890562271297 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4734002220794821118, guid: c0ccd45925cf23b4b9bf3a93f81bcda2, type: 3}
-  m_PrefabInstance: {fileID: 845070053579432383}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7427117233753877899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7829544762317786164, guid: c0ccd45925cf23b4b9bf3a93f81bcda2, type: 3}
@@ -600,7 +595,7 @@ PrefabInstance:
     - target: {fileID: 8292743647200758249, guid: a4654992720707d429f8520e27d272a5, type: 3}
       propertyPath: destructionEffect
       value: 
-      objectReference: {fileID: 5334732890562271297}
+      objectReference: {fileID: 0}
     - target: {fileID: 8939710397950007223, guid: a4654992720707d429f8520e27d272a5, type: 3}
       propertyPath: m_Size.y
       value: 4.8583584
