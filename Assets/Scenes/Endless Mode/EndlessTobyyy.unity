@@ -17588,26 +17588,37 @@ MonoBehaviour:
   level3Prefabs:
   - {fileID: 2805249895169364839, guid: 7f49c3cf8ab86c649b01a44e41c230ae, type: 3}
   - {fileID: 2805249895169364839, guid: 5702e9a18f67f7f42a97182cfbf912af, type: 3}
+  - {fileID: 2805249895169364839, guid: 661d3868ba84a9e4d97cf8df15e589aa, type: 3}
   level4Prefabs:
   - {fileID: 2805249895169364839, guid: dcc6dba30a4b4744686ec631785eb802, type: 3}
   - {fileID: 2805249895169364839, guid: 48717b62e3ca4ff4b8a575ad51355134, type: 3}
   - {fileID: 2805249895169364839, guid: 5702e9a18f67f7f42a97182cfbf912af, type: 3}
+  - {fileID: 2805249895169364839, guid: f30d893ead31a9841ac2e67de2cf6a96, type: 3}
+  - {fileID: 2805249895169364839, guid: 10bb6f1b99f0e6047ba020d735a21ef5, type: 3}
+  - {fileID: 2805249895169364839, guid: 7f49c3cf8ab86c649b01a44e41c230ae, type: 3}
   level5Prefabs:
   - {fileID: 2805249895169364839, guid: dcc6dba30a4b4744686ec631785eb802, type: 3}
   - {fileID: 2805249895169364839, guid: 48717b62e3ca4ff4b8a575ad51355134, type: 3}
   - {fileID: 2805249895169364839, guid: 5702e9a18f67f7f42a97182cfbf912af, type: 3}
   - {fileID: 2805249895169364839, guid: 0e2d6e484106c0e4796b8fbbca96fd18, type: 3}
   - {fileID: 2805249895169364839, guid: dc23a09bf06095e4b9f27021f6f5c7f3, type: 3}
-  - {fileID: 2805249895169364839, guid: 8cb57b7a135acb744a8d73bf76056b9b, type: 3}
-  - {fileID: 2805249895169364839, guid: 8cb57b7a135acb744a8d73bf76056b9b, type: 3}
+  - {fileID: 2805249895169364839, guid: 661d3868ba84a9e4d97cf8df15e589aa, type: 3}
+  - {fileID: 2805249895169364839, guid: 6616e20ecfcb9054b9756655a102d0b3, type: 3}
+  - {fileID: 2805249895169364839, guid: 10bb6f1b99f0e6047ba020d735a21ef5, type: 3}
+  - {fileID: 2805249895169364839, guid: f30d893ead31a9841ac2e67de2cf6a96, type: 3}
+  - {fileID: 2805249895169364839, guid: 7f49c3cf8ab86c649b01a44e41c230ae, type: 3}
+  - {fileID: 2805249895169364839, guid: 734c2ec18858d084e92e97ebc19ed5be, type: 3}
+  - {fileID: 2805249895169364839, guid: 5702e9a18f67f7f42a97182cfbf912af, type: 3}
+  - {fileID: 2805249895169364839, guid: 0e2d6e484106c0e4796b8fbbca96fd18, type: 3}
+  - {fileID: 2805249895169364839, guid: 001b1140ef495a346a7f9f51f7b7109d, type: 3}
   spawnPoint: {fileID: 1054407345}
   parentObject: {fileID: 0}
   followOffset: 1
   groundDetector: {fileID: 321748562}
-  detectionRadius: 2
+  detectionRadius: 1
   groundTag: Ground
-  spawnOffset1: 4
-  spawnOffset2: 6
+  spawnOffset1: 3
+  spawnOffset2: 5
   spawnOffset3: 3
   canSpawn: 1
   platformLifetime: 15
@@ -29574,9 +29585,21 @@ PrefabInstance:
       propertyPath: speedIncreaseAmount
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1122101824495167862, guid: 0777099113a30d44b9c254bd204f1ae6, type: 3}
+      propertyPath: speedIncreaseInterval
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1256288518728410223, guid: 0777099113a30d44b9c254bd204f1ae6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 182.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488635415937551634, guid: 0777099113a30d44b9c254bd204f1ae6, type: 3}
+      propertyPath: scaleSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1488635415937551634, guid: 0777099113a30d44b9c254bd204f1ae6, type: 3}
+      propertyPath: scaleAmplitude
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2406196087551796889, guid: 0777099113a30d44b9c254bd204f1ae6, type: 3}
       propertyPath: m_LocalScale.y

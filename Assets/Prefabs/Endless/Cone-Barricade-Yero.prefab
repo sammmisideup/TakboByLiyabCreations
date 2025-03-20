@@ -107,7 +107,7 @@ MonoBehaviour:
   endlessMapRG: {fileID: 678744773386468241}
   baseSpeed: 40
   speedIncreaseInterval: 5
-  speedIncreaseAmount: 2
+  speedIncreaseAmount: 5
   endlessMapSpeed: 35
 --- !u!61 &7135723144202593217
 BoxCollider2D:
@@ -469,6 +469,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5746757888667843767, guid: eeeb61561aeaa9a4cb6183b6d329fb46, type: 3}
   m_PrefabInstance: {fileID: 4155569749256186143}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9016428408398024466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4939117792646931981, guid: eeeb61561aeaa9a4cb6183b6d329fb46, type: 3}
+  m_PrefabInstance: {fileID: 4155569749256186143}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5191797726584162072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9016428408398024466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15edb73fc20d9d94d93e40be2811b139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 30
+  scaleAmplitude: 0.1
+  scaleSpeed: 5
 --- !u!1001 &5504722807105634515
 PrefabInstance:
   m_ObjectHideFlags: 0

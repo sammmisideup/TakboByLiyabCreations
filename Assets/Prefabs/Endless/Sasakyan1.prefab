@@ -109,7 +109,7 @@ MonoBehaviour:
   endlessMapRG: {fileID: 678744773386468241}
   baseSpeed: 40
   speedIncreaseInterval: 5
-  speedIncreaseAmount: 2
+  speedIncreaseAmount: 5
   endlessMapSpeed: 35
 --- !u!61 &7135723144202593217
 BoxCollider2D:
@@ -207,11 +207,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8501467447536789555, guid: 54bdcc3b7fc55b945a386cc2dc991a06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 90.8
+      value: 99.3
       objectReference: {fileID: 0}
     - target: {fileID: 8501467447536789555, guid: 54bdcc3b7fc55b945a386cc2dc991a06, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.9
+      value: 32.7
       objectReference: {fileID: 0}
     - target: {fileID: 8501467447536789555, guid: 54bdcc3b7fc55b945a386cc2dc991a06, type: 3}
       propertyPath: m_LocalPosition.z
@@ -274,6 +274,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 50
   checkRadius: 1
+--- !u!114 &9065566945056633558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8479137306702298977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15edb73fc20d9d94d93e40be2811b139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 30
+  scaleAmplitude: 0.1
+  scaleSpeed: 5
 --- !u!4 &9142345555298543067 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8501467447536789555, guid: 54bdcc3b7fc55b945a386cc2dc991a06, type: 3}
@@ -296,15 +311,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7829544762317786164, guid: c0ccd45925cf23b4b9bf3a93f81bcda2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 492.65
+      value: 275.7
       objectReference: {fileID: 0}
     - target: {fileID: 7829544762317786164, guid: c0ccd45925cf23b4b9bf3a93f81bcda2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 492.65
+      value: 275.7
       objectReference: {fileID: 0}
     - target: {fileID: 7829544762317786164, guid: c0ccd45925cf23b4b9bf3a93f81bcda2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 767.6
+      value: 429.56934
       objectReference: {fileID: 0}
     - target: {fileID: 7829544762317786164, guid: c0ccd45925cf23b4b9bf3a93f81bcda2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -312,7 +327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7829544762317786164, guid: c0ccd45925cf23b4b9bf3a93f81bcda2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.52
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7829544762317786164, guid: c0ccd45925cf23b4b9bf3a93f81bcda2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -348,7 +363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7829544762317786164, guid: c0ccd45925cf23b4b9bf3a93f81bcda2, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0ccd45925cf23b4b9bf3a93f81bcda2, type: 3}
@@ -506,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 2889807345299450996}
     - target: {fileID: 5410091279161366016, guid: a4654992720707d429f8520e27d272a5, type: 3}
       propertyPath: carSpeed
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6768615635887626616, guid: a4654992720707d429f8520e27d272a5, type: 3}
       propertyPath: m_Mesh
@@ -803,6 +818,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6598220588024100014, guid: 98dade0cd53298b40b083b1bca0eeb37, type: 3}
   m_PrefabInstance: {fileID: 4422949795173821446}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8463091306723656113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7417692253556086952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15edb73fc20d9d94d93e40be2811b139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 30
+  scaleAmplitude: 0.1
+  scaleSpeed: 5
 --- !u!114 &9183317740605553700
 MonoBehaviour:
   m_ObjectHideFlags: 0

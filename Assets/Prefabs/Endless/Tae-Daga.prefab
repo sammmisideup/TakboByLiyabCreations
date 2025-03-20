@@ -107,7 +107,7 @@ MonoBehaviour:
   endlessMapRG: {fileID: 678744773386468241}
   baseSpeed: 40
   speedIncreaseInterval: 5
-  speedIncreaseAmount: 2
+  speedIncreaseAmount: 5
   endlessMapSpeed: 35
 --- !u!61 &7135723144202593217
 BoxCollider2D:
@@ -313,6 +313,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 50
   checkRadius: 1
+--- !u!114 &5433643271225050625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8076570312425330115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15edb73fc20d9d94d93e40be2811b139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 30
+  scaleAmplitude: 0.1
+  scaleSpeed: 5
 --- !u!4 &8889662856541474681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8423089193294526577, guid: 62aea0b6ab78937449cc884a25453945, type: 3}
