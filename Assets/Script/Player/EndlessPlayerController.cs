@@ -58,13 +58,18 @@ public class EndlessPlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetKeyDown(KeyCode.W) && isGrounded || Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
             jumpRequest = true; // Set jump request flag
             tobyAnimator.SetTrigger("jump");
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && isGrab)  // Press G to collect item
+        if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            rb.velocity = Vector2.down * 100f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.G) && isGrab || Input.GetKeyDown(KeyCode.Keypad0) && isGrab)   // Press G to collect item
         {
             grabRequest = true;
             tobyAnimator.SetTrigger("grab");
@@ -133,6 +138,11 @@ public class EndlessPlayerController : MonoBehaviour
             tobyAnimator.SetTrigger("jump");
             
         }
+    }
+
+    public void DownButton()
+    {
+        rb.velocity = Vector2.down * 100f;
     }
 
     public void GrabButton()
