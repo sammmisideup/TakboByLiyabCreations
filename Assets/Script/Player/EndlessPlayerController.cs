@@ -26,7 +26,6 @@ public class EndlessPlayerController : MonoBehaviour
     public float addedEnergy;
     public float minusEnergy;
 
-    [SerializeField] private ParticleSystem ItemsSmokeParticle = default;
     public Gradient gradient;
 
     public TextMeshProUGUI scoreText;
@@ -35,10 +34,15 @@ public class EndlessPlayerController : MonoBehaviour
     [Header("Animation")]
     public Animator tobyAnimator;
 
+    [Header("Audio")]
+    AudioManager audioManager;
+
     void Awake()
     {
         if (instance == null)
             instance = this;
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     void Start()
@@ -73,6 +77,7 @@ public class EndlessPlayerController : MonoBehaviour
         {
             grabRequest = true;
             tobyAnimator.SetTrigger("grab");
+            audioManager.PlaySFX(audioManager.grab);
         }
 
         if (timeRemaining > 0)
@@ -151,7 +156,7 @@ public class EndlessPlayerController : MonoBehaviour
             {
                 grabRequest = true;
                 tobyAnimator.SetTrigger("grab");
-                
+                audioManager.PlaySFX(audioManager.grab);
             }
     }
 
@@ -174,11 +179,13 @@ public class EndlessPlayerController : MonoBehaviour
             timeRemaining -= minusEnergy;
             Destroy(col.gameObject, 0.3f);
             tobyAnimator.SetTrigger("recoil");
+            audioManager.PlaySFX(audioManager.recoil);
         }
         else if (col.gameObject.CompareTag("ObstacleBelow"))
         {
             timeRemaining -= minusEnergy;
             Invoke("SpawnPlayer", 1f);
+            audioManager.PlaySFX(audioManager.recoil);
         }
         else if (col.gameObject.CompareTag("SpeedUp") && EndlessMapForce.instance != null)
         {
@@ -205,6 +212,7 @@ public class EndlessPlayerController : MonoBehaviour
         {
             isGrounded = true;
             tobyAnimator.SetBool("run", true);
+            audioManager.Play2SFX(audioManager.run);
         }
     }
 
@@ -214,6 +222,7 @@ public class EndlessPlayerController : MonoBehaviour
         {
             isGrounded = true;
             tobyAnimator.SetBool("run", true);
+            audioManager.Play2SFX(audioManager.run);
         }
     }
 
@@ -223,6 +232,7 @@ public class EndlessPlayerController : MonoBehaviour
         {
             isGrounded = false;
             tobyAnimator.SetBool("run", false);
+            audioManager.StopSFX(audioManager.run);
         }
     }
 
@@ -240,10 +250,7 @@ public class EndlessPlayerController : MonoBehaviour
                     timerStamina.fillAmount = timeRemaining / maxTime;
                 }
 
-                if (ItemsSmokeParticle != null)
-                {
-                    ItemsSmokeParticle.Play();
-                }
+                
                 
                 Destroy(col.gameObject);
                 grabRequest = false;
