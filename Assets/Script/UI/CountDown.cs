@@ -16,6 +16,15 @@ public class CountDown : MonoBehaviour
     public GameObject player;
     public Animator animator;
 
+
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         animator = player.GetComponent<Animator>();
@@ -31,7 +40,7 @@ public class CountDown : MonoBehaviour
 
     private IEnumerator CountDownCo()
     {
-    
+        audioManager.StopSFX(audioManager.run);
         if(countDownCount>0)
         {
             countDownText.text = countDownCount.ToString();
@@ -54,6 +63,7 @@ public class CountDown : MonoBehaviour
             //animatorNanay.SetBool("idle", false);
             ClassicMapForce.instance.enabled = true;
             countDownHolder.gameObject.SetActive(false);
+            audioManager.Play2SFX(audioManager.run);
         }
     }
 

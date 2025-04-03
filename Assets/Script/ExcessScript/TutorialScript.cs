@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class TutorialScript : MonoBehaviour
 {
-    public GameObject tutorialJump, tutorialGrab;
+    public GameObject tutorialJump, tutorialGrab, tutorialDown, downCollider;
     public Animator tobyAnimator;
     public bool isJump;
     public bool isGrab;
+    public bool isDown;
+    public Rigidbody rbPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +19,7 @@ public class TutorialScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && isJump)
+        if (Input.GetKeyDown(KeyCode.W) && isJump || Input.GetKeyDown(KeyCode.UpArrow) && isJump)
             {
                 tobyAnimator.SetBool("idle", false);
                 tutorialJump.SetActive(false);
@@ -31,6 +34,16 @@ public class TutorialScript : MonoBehaviour
                 ClassicMapForce.instance.classicMapSpeed = 40f;
                 isGrab = false;
             }
+
+        if(Input.GetKeyDown(KeyCode.S) && isDown || Input.GetKeyDown(KeyCode.DownArrow) && isDown)
+        {
+            tobyAnimator.SetBool("idle", false);
+            tutorialDown.SetActive(false);
+            ClassicMapForce.instance.classicMapSpeed = 40f;
+            rbPlayer.isKinematic = false;
+            isDown= false;
+            downCollider.SetActive(false);
+        }
         
     }
 
@@ -57,6 +70,19 @@ public class TutorialScript : MonoBehaviour
         }
     }
 
+    public void DownButton()
+    {
+        if (isDown) 
+        {
+            tobyAnimator.SetBool("idle", false);
+            tutorialDown.SetActive(false);
+            ClassicMapForce.instance.classicMapSpeed = 40f;
+            rbPlayer.isKinematic = false;
+            isDown= false;
+            downCollider.SetActive(false);
+        }
+    }
+
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "TutorialJump")
@@ -73,6 +99,16 @@ public class TutorialScript : MonoBehaviour
             tutorialGrab.SetActive(true);
             ClassicMapForce.instance.classicMapSpeed = 0;
             isGrab = true;
+        }
+
+        if (col.gameObject.tag == "TutorialDown")
+        {
+            tobyAnimator.SetBool("idle", true);
+            tutorialDown.SetActive(true);
+            ClassicMapForce.instance.classicMapSpeed = 0;
+            rbPlayer.isKinematic = true;
+            isDown= true;
+            Debug.Log("Go Down");
         }
     }
 
