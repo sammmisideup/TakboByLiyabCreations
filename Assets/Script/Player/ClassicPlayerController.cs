@@ -257,14 +257,14 @@ public class ClassicPlayerController : MonoBehaviour
             }else if(SceneManager.GetActiveScene().buildIndex == 20)
             {
                 Invoke("EndCutSCene", 5f);
-                Invoke("TereWinner", 13f);
+                Invoke("Winner", 13f);
             }else if(SceneManager.GetActiveScene().buildIndex >= 21 && SceneManager.GetActiveScene().buildIndex <= 29)
             {
                 Invoke("TereWinner", 5f);
             }else if(SceneManager.GetActiveScene().buildIndex == 30)
             {
                 Invoke("EndCutSCene", 5f);
-                Invoke("BoyWinner", 20f);
+                Invoke("TereWinner", 20f);
             }else if(SceneManager.GetActiveScene().buildIndex >= 31 && SceneManager.GetActiveScene().buildIndex <= 39)
             {
                 Invoke("BoyWinner", 5f);
